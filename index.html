@@ -274,6 +274,29 @@
     .compliance-list { margin: 0; padding-left: 18px; color: var(--muted); }
     .compliance-list li { margin-bottom: 8px; }
 
+    .toast {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 90;
+      border: 1px solid #3b4d82;
+      background: #121b32;
+      color: var(--text);
+      border-radius: 10px;
+      padding: .7rem .85rem;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: .22s ease;
+      max-width: min(420px, 86vw);
+      font-size: .87rem;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     footer {
       border-top: 1px solid var(--line);
       padding: 32px 0;
@@ -544,6 +567,8 @@
               <span class="status-pill" id="paymentStatus">Status: Pending Verification</span>
               <label for="txnInput">UPI Transaction / Reference ID</label>
               <input id="txnInput" placeholder="Enter transaction ID" />
+              <label for="qrUpload" style="margin-top:8px;">Replace QR image (local file)</label>
+              <input id="qrUpload" type="file" accept="image/*" />
               <div style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;">
                 <button class="btn btn-outline" id="submitTxnBtn">Submit Proof</button>
                 <button class="btn btn-danger" id="resetBillingBtn">Reset Billing Status</button>
@@ -627,6 +652,7 @@
       <span class="sr-only" id="authStatus" aria-live="polite"></span>
     </div>
   </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
     const defaultState = {
@@ -635,8 +661,7 @@
       currency: 'USD',
       pendingTxn: null,
       paymentStatus: 'pending',
-      adminEnabled: false,
-      adminCode: 'stadvix-admin'
+      adminEnabled: false
     };
 
     const state = { ...defaultState };
@@ -680,13 +705,38 @@
         box.textContent = 'No runs yet.';
         return;
       }
-      box.innerHTML = state.history.map(item => `
-        <article class="history-item">
-          <div><strong>${item.module}</strong> • <small>${item.time}</small></div>
-          <div style="margin-top:5px; color:#a8b6dd;">Input: ${item.prompt.slice(0, 130)}</div>
-          <div style="margin-top:6px;">${item.output.slice(0, 220)}...</div>
-        </article>
-      `).join('');
+      box.innerHTML = '';
+      state.history.forEach(item => {
+        const wrap = document.createElement('article');
+        wrap.className = 'history-item';
+
+        const head = document.createElement('div');
+        const strong = document.createElement('strong');
+        strong.textContent = item.module;
+        const meta = document.createElement('small');
+        meta.textContent = ` • ${item.time}`;
+        head.append(strong, meta);
+
+        const input = document.createElement('div');
+        input.style.marginTop = '5px';
+        input.style.color = '#a8b6dd';
+        input.textContent = `Input: ${item.prompt.slice(0, 130)}`;
+
+        const body = document.createElement('div');
+        body.style.marginTop = '6px';
+        body.textContent = `${item.output.slice(0, 220)}...`;
+
+        wrap.append(head, input, body);
+        box.appendChild(wrap);
+      });
+    }
+
+    function toast(message) {
+      const el = document.getElementById('toast');
+      el.textContent = message;
+      el.classList.add('show');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => el.classList.remove('show'), 2300);
     }
 
     function setPaymentStatusVisual() {
@@ -771,9 +821,11 @@
         const txn = document.getElementById('txnInput').value.trim();
         if (!txn) {
           state.paymentStatus = 'pending';
+          toast('Please add transaction ID before submitting.');
         } else {
           state.pendingTxn = txn;
           state.paymentStatus = 'submitted';
+          toast('Payment proof submitted for admin review.');
         }
         setPaymentStatusVisual();
         saveState();
@@ -785,27 +837,45 @@
         document.getElementById('txnInput').value = '';
         setPaymentStatusVisual();
         saveState();
+        toast('Billing status reset.');
+      });
+
+      document.getElementById('qrUpload').addEventListener('change', event => {
+        const [file] = event.target.files || [];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          const result = String(reader.result || '');
+          document.getElementById('qrImage').src = result;
+          localStorage.setItem('stadvix_qr_data', result);
+          toast('QR image updated for this browser.');
+        };
+        reader.readAsDataURL(file);
       });
 
       document.getElementById('adminEnableBtn').addEventListener('click', () => {
         const inputCode = document.getElementById('adminCodeInput').value.trim();
-        state.adminEnabled = inputCode === state.adminCode;
+        state.adminEnabled = inputCode === 'stadvix-admin';
         setAdminVisual();
         saveState();
+        toast(state.adminEnabled ? 'Admin mode enabled.' : 'Invalid admin code.');
       });
 
       document.getElementById('adminDisableBtn').addEventListener('click', () => {
         state.adminEnabled = false;
         setAdminVisual();
         saveState();
+        toast('Admin mode disabled.');
       });
 
       document.getElementById('approveBtn').addEventListener('click', () => {
         if (!state.adminEnabled || !state.pendingTxn) {
           state.paymentStatus = 'pending';
+          toast('No pending payment found.');
         } else {
           state.paymentStatus = 'approved';
           state.pendingTxn = null;
+          toast('Payment approved and plan marked active.');
         }
         setPaymentStatusVisual();
         saveState();
@@ -832,17 +902,27 @@
       document.getElementById('authSubmitBtn').addEventListener('click', () => {
         const email = document.getElementById('emailInput').value.trim();
         const password = document.getElementById('passwordInput').value.trim();
-        if (!email || !password) return;
+        if (!email || !password) {
+          toast('Please enter email and password.');
+          return;
+        }
+        const validEmail = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+        if (!validEmail.test(email)) {
+          toast('Please enter a valid email address.');
+          return;
+        }
         localStorage.setItem('stadvix_user_email', email);
         document.getElementById('authStatus').textContent = `Session started for ${email}`;
         closeAuth();
-        alert(`Welcome, ${email}. Trial started.`);
+        toast(`Welcome, ${email}. Trial started.`);
       });
     }
 
     function init() {
       loadState();
       bindEvents();
+      const qrData = localStorage.getItem('stadvix_qr_data');
+      if (qrData) document.getElementById('qrImage').src = qrData;
       setCurrency(state.currency || 'USD');
       updateUsage();
       renderHistory();
