@@ -3,1251 +3,555 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Saffron Table | Luxury Indian Fusion Fine Dining in Pune</title>
-  <meta name="description" content="The Saffron Table is Pune's ultra-premium Indian fusion destination for fine dining, chef-led storytelling, private experiences, and instant reservations." />
-  <meta name="keywords" content="The Saffron Table, Pune fine dining, luxury Indian fusion, chef's table Pune, reservations Pune, Maharashtra restaurant" />
-  <meta name="theme-color" content="#14080d" />
-  <meta property="og:title" content="The Saffron Table | Pune's Finest Indian Fusion Experience" />
-  <meta property="og:description" content="Immersive luxury dining with curated tasting menus, chef's table experiences, wine pairings, and seamless reservations." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Saffron Table" />
-  <meta name="twitter:description" content="A 2026-style immersive single-page experience for Pune's luxury Indian fusion restaurant." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['Playfair Display', 'serif'],
-            sans: ['Inter', 'sans-serif']
-          },
-          colors: {
-            ink: '#070508',
-            noir: '#12060d',
-            saffron: '#e7b04b',
-            maroon: '#58152a',
-            cyanlux: '#7ce7e9',
-            ivory: '#f8efe5'
-          },
-          boxShadow: {
-            glow: '0 0 0 1px rgba(231,176,75,0.2), 0 12px 60px rgba(231,176,75,0.18)',
-            cyan: '0 8px 36px rgba(124,231,233,0.18)'
-          },
-          backgroundImage: {
-            radial: 'radial-gradient(circle at top, rgba(124,231,233,0.14), transparent 35%), radial-gradient(circle at bottom, rgba(231,176,75,0.12), transparent 30%)'
-          }
-        }
-      }
-    };
-  </script>
+  <title>Stadvix | AI Growth Operating System</title>
+  <meta name="description" content="Stadvix helps teams automate lead generation, outreach, and growth operations with AI modules." />
+  <meta name="theme-color" content="#0a0a0d" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #070508;
-      --panel: rgba(20, 8, 13, 0.75);
-      --panel-solid: rgba(18, 6, 13, 0.96);
-      --gold: #e7b04b;
-      --gold-soft: rgba(231, 176, 75, 0.18);
-      --maroon: #58152a;
-      --cyan: #7ce7e9;
-      --text: #f6eadc;
-      --muted: rgba(248, 239, 229, 0.68);
-      --border: rgba(255, 255, 255, 0.08);
+      --bg: #07080d;
+      --bg-soft: #10131f;
+      --card: #121624;
+      --card-2: #181d2f;
+      --text: #f4f6ff;
+      --muted: #a6b1d1;
+      --line: #28314f;
+      --accent: #7de68a;
+      --accent-2: #9cf6ff;
+      --danger: #ff6e7f;
+      --warning: #ffcc66;
     }
+
     * { box-sizing: border-box; }
-    html { scroll-behavior: auto; }
-    body {
-      margin: 0;
-      font-family: Inter, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(88, 21, 42, 0.6), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(124, 231, 233, 0.08), transparent 30%),
-        linear-gradient(180deg, #050306 0%, #12060d 45%, #090408 100%);
-      color: var(--text);
-      overflow-x: hidden;
-      cursor: none;
-    }
-    img { display: block; }
-    body.menu-open { overflow: hidden; }
-    .grain::before,
-    .grain::after {
-      content: "";
-      position: absolute;
-      inset: -50%;
-      pointer-events: none;
-      background-image: radial-gradient(rgba(255,255,255,0.06) 0.8px, transparent 0.8px);
-      background-size: 12px 12px;
-      opacity: 0.08;
-      animation: drift 18s linear infinite;
-    }
-    .grain::after {
-      animation-direction: reverse;
-      animation-duration: 24s;
-      opacity: 0.05;
-    }
-    @keyframes drift {
-      from { transform: translate3d(0, 0, 0) rotate(0deg); }
-      to { transform: translate3d(8%, -6%, 0) rotate(8deg); }
-    }
-    .gold-foil {
-      background: linear-gradient(115deg, #fff5d8 0%, #f6cc71 16%, #8d5f10 35%, #fff3c4 52%, #f0b447 68%, #fff2be 100%);
-      background-size: 220% auto;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 20px rgba(231, 176, 75, 0.15);
-      animation: goldShift 8s linear infinite;
-    }
-    @keyframes goldShift { to { background-position: 200% center; } }
-    .glass {
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-      border: 1px solid var(--border);
-    }
-    .section-title::after {
-      content: "";
-      display: block;
-      width: 72px;
-      height: 1px;
-      margin-top: 16px;
-      background: linear-gradient(90deg, transparent, var(--gold), var(--cyan), transparent);
-    }
-    .menu-card:hover .menu-image,
-    .gallery-item:hover img { transform: scale(1.08); }
-    .menu-card:hover .menu-price { transform: translateY(0) scale(1); opacity: 1; }
-    .menu-price { transform: translateY(8px) scale(0.94); opacity: 0; transition: 0.35s ease; }
-    .flip-card { perspective: 1600px; }
-    .flip-card-inner { transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(.2,.8,.2,1); }
-    .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
-    .flip-face { backface-visibility: hidden; }
-    .flip-back { transform: rotateY(180deg); }
-    .cursor-glow,
-    .cursor-dot {
-      position: fixed;
+    html, body { margin: 0; padding: 0; font-family: Inter, sans-serif; background: radial-gradient(circle at top right, #1c2340 0%, var(--bg) 40%); color: var(--text); }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, 92%); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
       top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 70;
-      border-radius: 999px;
-      transform: translate(-50%, -50%);
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #2a3150;
+      background: rgba(7, 8, 13, 0.75);
     }
-    .cursor-glow {
-      width: 120px;
-      height: 120px;
-      background: radial-gradient(circle, rgba(124,231,233,0.16), rgba(231,176,75,0.05) 40%, transparent 70%);
-      mix-blend-mode: screen;
-      filter: blur(8px);
+    .topbar-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand h1 { font-family: Cinzel, serif; font-size: 1.1rem; margin: 0; letter-spacing: .5px; }
+    .brand small { color: var(--muted); display: block; font-size: .72rem; }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #261b0f, #0d0a07);
+      border: 1px solid #8e6f3d;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 0 0 2px rgba(212,171,94,.2), 0 8px 20px rgba(0,0,0,.45);
     }
-    .cursor-dot {
-      width: 10px;
-      height: 10px;
-      background: linear-gradient(135deg, var(--gold), #fff7d7);
-      box-shadow: 0 0 16px rgba(231,176,75,0.55);
+
+    nav { display: flex; gap: 20px; align-items: center; }
+    nav a { color: var(--muted); font-size: .92rem; }
+    nav a:hover { color: var(--text); }
+
+    .btn {
+      border: 1px solid transparent;
+      background: #1d243a;
+      color: var(--text);
+      padding: .72rem 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
     }
-    .split-line { display: inline-block; overflow: hidden; }
-    .split-line span { display: inline-block; transform: translateY(120%); }
-    .timeline-line {
-      background: linear-gradient(180deg, rgba(231,176,75,0), rgba(231,176,75,0.9), rgba(124,231,233,0.8), rgba(231,176,75,0));
-      transform-origin: top;
-      transform: scaleY(0);
+    .btn:hover { filter: brightness(1.08); }
+    .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #07110c; }
+    .btn-outline { background: transparent; border-color: #3a4670; }
+    .btn-sm { padding: .55rem .8rem; font-size: .85rem; }
+
+    .hero { padding: 70px 0 40px; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 30px; align-items: center; }
+    .tag { display: inline-flex; gap: 8px; align-items: center; border: 1px solid #38506f; padding: .35rem .7rem; border-radius: 99px; color: #b6c9ea; font-size: .76rem; }
+    .hero h2 { font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.15; margin: 14px 0; }
+    .hero p { color: var(--muted); line-height: 1.65; max-width: 55ch; }
+
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .trust-line { margin-top: 12px; color: #8fa0ca; font-size: .84rem; }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(22,28,47,.95), rgba(16,19,31,.95));
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      overflow: hidden;
     }
-    .scroll-arrow { animation: bounceFade 2.3s ease-in-out infinite; }
-    @keyframes bounceFade {
-      0%, 100% { transform: translateY(0); opacity: 0.35; }
-      50% { transform: translateY(10px); opacity: 1; }
+    .panel-head { padding: 13px 14px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+    .pill { font-size: .75rem; border: 1px solid #36554a; color: #afeec9; padding: .2rem .55rem; border-radius: 999px; }
+    .panel-body { padding: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .metric-card { background: #0f1320; border: 1px solid #273150; border-radius: 12px; padding: 12px; }
+    .metric-card .label { color: #8ea1cf; font-size: .78rem; }
+    .metric-card .value { font-size: 1.35rem; font-weight: 700; margin-top: 4px; }
+    .metric-card .sub { font-size: .75rem; color: #87d9a0; margin-top: 4px; }
+
+    .section { padding: 60px 0; }
+    .section h3 { font-size: 1.8rem; margin-bottom: 8px; }
+    .section p.lead { color: var(--muted); margin-top: 0; margin-bottom: 24px; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: linear-gradient(180deg, #131a2b, #0f1422);
+      padding: 14px;
     }
-    .slot.active,
-    .slot:hover {
-      border-color: rgba(231,176,75,0.55);
-      background: linear-gradient(135deg, rgba(231,176,75,0.18), rgba(124,231,233,0.12));
-      transform: translateY(-2px);
+    .card h4 { margin: 0 0 6px; font-size: 1rem; }
+    .card p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+    .badge { display: inline-block; margin-top: 10px; font-size: .72rem; color: #9ff0bf; border: 1px solid #2f5d4a; padding: .22rem .55rem; border-radius: 99px; }
+
+    .pricing-toggle { display: inline-flex; border: 1px solid #35416a; border-radius: 999px; padding: 4px; gap: 4px; }
+    .pricing-toggle button { background: transparent; color: var(--muted); border: none; border-radius: 999px; padding: .45rem .75rem; cursor: pointer; font-weight: 600; }
+    .pricing-toggle button.active { background: #28355a; color: var(--text); }
+
+    .price-card { position: relative; }
+    .price { font-size: 2rem; font-weight: 800; margin: 10px 0 2px; }
+    .popular { position: absolute; top: -11px; right: 12px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #06130b; font-size: .7rem; font-weight: 800; padding: .3rem .55rem; border-radius: 99px; }
+    .price-list { margin: 12px 0 16px; padding-left: 18px; color: var(--muted); }
+    .price-list li { margin-bottom: 8px; }
+
+    .dashboard {
+      display: none;
+      margin-top: 24px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
     }
-    .masonry { column-count: 1; column-gap: 1rem; }
-    @media (min-width: 768px) { .masonry { column-count: 2; } }
-    @media (min-width: 1024px) { .masonry { column-count: 3; } }
-    .masonry > figure {
-      break-inside: avoid;
-      margin: 0 0 1rem;
+    .dashboard.active { display: block; }
+    .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+    .tab { border: 1px solid #3b4b7c; background: #1a2238; color: var(--muted); padding: .45rem .75rem; border-radius: 9px; cursor: pointer; }
+    .tab.active { color: var(--text); border-color: #7aa6ff; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
     }
-    .typing::after {
-      content: "";
+    textarea, input, select {
+      width: 100%;
+      border: 1px solid #33416a;
+      border-radius: 10px;
+      background: #10182b;
+      color: var(--text);
+      padding: .75rem;
+      font-family: inherit;
+    }
+    .run-box { min-height: 180px; border: 1px solid #33416a; border-radius: 10px; padding: 12px; background: #10182b; color: #d8e4ff; white-space: pre-wrap; }
+
+    .usage-bar-wrap { margin-top: 8px; }
+    .usage-bar { height: 10px; border-radius: 10px; background: #242f4f; overflow: hidden; }
+    .usage-bar > div { height: 100%; background: linear-gradient(90deg, #5ae09e, #8ce2ff); width: 0; }
+
+    .qr-box { display: grid; gap: 12px; }
+    .qr-box img { max-width: 260px; width: 100%; border-radius: 10px; border: 1px solid #3a4a78; }
+    .status {
       display: inline-block;
-      width: 1px;
-      height: 1.1em;
-      background: var(--gold);
-      margin-left: 8px;
-      vertical-align: -0.1em;
-      animation: blink 1s steps(2, start) infinite;
+      font-size: .78rem;
+      padding: .2rem .55rem;
+      border-radius: 999px;
+      border: 1px solid #5d4f2e;
+      color: #ffd98a;
     }
-    @keyframes blink { to { opacity: 0; } }
-    #loader { transition: opacity 0.8s ease, visibility 0.8s ease; animation: loaderAutoHide 0.9s ease 2.4s forwards; }
-    #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-    @keyframes loaderAutoHide { to { opacity: 0; visibility: hidden; pointer-events: none; } }
-    .hero-media::after {
-      content: "";
-      position: absolute;
+
+    footer {
+      padding: 38px 0;
+      border-top: 1px solid var(--line);
+      color: #8da0cd;
+      font-size: .85rem;
+    }
+
+    .modal {
+      position: fixed;
       inset: 0;
-      background: linear-gradient(180deg, rgba(7,5,8,0.15) 0%, rgba(7,5,8,0.6) 60%, rgba(7,5,8,0.92) 100%);
+      background: rgba(0,0,0,.6);
+      display: none;
+      place-items: center;
+      z-index: 50;
     }
-    .nav-solid {
-      background: rgba(10, 5, 9, 0.88);
-      border-color: rgba(255,255,255,0.08);
-      box-shadow: 0 18px 42px rgba(0,0,0,0.32);
+    .modal.active { display: grid; }
+    .modal-card {
+      width: min(440px, 90%);
+      background: #121b30;
+      border: 1px solid #33416a;
+      border-radius: 14px;
+      padding: 18px;
     }
-    .tilt-card { transform-style: preserve-3d; transition: transform 0.35s ease; }
-    .tilt-card > * { transform: translateZ(24px); }
-    .field-group input:focus + label,
-    .field-group input:not(:placeholder-shown) + label,
-    .field-group textarea:focus + label,
-    .field-group textarea:not(:placeholder-shown) + label,
-    .field-group select:focus + label,
-    .field-group select:valid + label {
-      transform: translateY(-30px) scale(0.85);
-      color: var(--gold);
+    .modal-card h4 { margin-top: 0; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .workspace { grid-template-columns: 1fr; }
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      nav a { display: none; }
     }
-    .field-group label {
-      transition: transform 0.25s ease, color 0.25s ease;
-      transform-origin: left center;
-    }
-    .star-fill { transform: scaleX(0); transform-origin: left; }
-    .hide-scrollbar::-webkit-scrollbar { display: none; }
-    .hide-scrollbar { scrollbar-width: none; }
-    @media (max-width: 767px) {
-      body { cursor: auto; }
-      .cursor-glow, .cursor-dot { display: none; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
-      .cursor-glow, .cursor-dot, canvas { display: none !important; }
+    @media (max-width: 640px) {
+      .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .topbar-inner { height: auto; padding: 12px 0; align-items: flex-start; gap: 12px; flex-direction: column; }
     }
   </style>
 </head>
-<body class="selection:bg-saffron/20 selection:text-white">
-  <div id="loader" class="fixed inset-0 z-[90] flex items-center justify-center bg-ink">
-    <canvas id="loaderCanvas" class="absolute inset-0 h-full w-full"></canvas>
-    <div class="relative text-center">
-      <p class="mb-4 text-xs uppercase tracking-[0.5em] text-saffron/70">Immersive fine dining</p>
-      <h1 class="font-display text-4xl font-semibold text-ivory md:text-6xl">The Saffron Table</h1>
-      <p class="mt-4 text-sm text-ivory/60">Preparing a chef-led digital tasting journey…</p>
-    </div>
-  </div>
-
-  <div class="cursor-glow" aria-hidden="true"></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
-  <canvas id="spiceCanvas" class="pointer-events-none fixed inset-0 z-[1] h-full w-full opacity-70" aria-hidden="true"></canvas>
-
-  <a href="#reservations" class="fixed bottom-6 right-6 z-50 inline-flex items-center gap-3 rounded-full border border-saffron/40 bg-black/55 px-5 py-3 text-sm font-semibold text-white shadow-glow backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyanlux/60 hover:shadow-cyan" aria-label="Book a table now">
-    <span class="inline-flex h-2.5 w-2.5 rounded-full bg-saffron animate-pulse"></span>
-    Book Now
-  </a>
-
-  <a href="https://wa.me/919876543210" class="fixed bottom-24 right-6 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-500/85 text-white shadow-2xl shadow-emerald-500/25 transition duration-300 hover:scale-110" target="_blank" rel="noreferrer" aria-label="Message The Saffron Table on WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.52 0 .2 5.32.2 11.86c0 2.09.54 4.13 1.58 5.93L0 24l6.39-1.67a11.8 11.8 0 0 0 5.67 1.45h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.23-6.16-3.41-8.44Zm-8.46 18.3h-.01a9.88 9.88 0 0 1-5.02-1.37l-.36-.21-3.79.99 1.01-3.69-.24-.38a9.84 9.84 0 0 1-1.52-5.26c0-5.44 4.43-9.87 9.88-9.87 2.64 0 5.12 1.03 6.99 2.89a9.81 9.81 0 0 1 2.89 6.99c0 5.45-4.43 9.88-9.87 9.88Zm5.41-7.39c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.46-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.71.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.69.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
-  </a>
-
-  <header id="navbar" class="fixed inset-x-0 top-0 z-40 border-b border-transparent transition-all duration-500">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10" aria-label="Primary navigation">
-      <a href="#home" class="group flex items-center gap-3">
-        <span class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-saffron/30 bg-saffron/10 font-display text-lg text-saffron shadow-glow">ST</span>
-        <span>
-          <span class="block font-display text-xl text-white">The Saffron Table</span>
-          <span class="block text-[10px] uppercase tracking-[0.35em] text-white/50">Pune · Maharashtra</span>
-        </span>
-      </a>
-      <div class="hidden items-center gap-8 md:flex">
-        <a class="nav-link text-sm text-white/80" href="#home">Home</a>
-        <a class="nav-link text-sm text-white/80" href="#menu">Menu</a>
-        <a class="nav-link text-sm text-white/80" href="#experiences">Experiences</a>
-        <a class="nav-link text-sm text-white/80" href="#reservations">Reservations</a>
-        <a class="nav-link text-sm text-white/80" href="#gallery">Gallery</a>
-        <a class="nav-link text-sm text-white/80" href="#contact">Contact</a>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="logo-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="11" stroke="#d4ab5e" stroke-width="1.2"></circle>
+            <path d="M6 14c4-1 6-4 8-8 2 4 3 8 4 12-4-2-8-2-12-4z" fill="#d4ab5e"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Stadvix</h1>
+          <small>AI Growth Operating System</small>
+        </div>
       </div>
-      <div class="flex items-center gap-3">
-        <a href="#reservations" class="hidden rounded-full border border-saffron/30 bg-saffron/10 px-5 py-2 text-sm font-medium text-saffron transition hover:-translate-y-0.5 hover:bg-saffron/15 md:inline-flex">Reserve</a>
-        <button id="menuToggle" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-          <span class="relative block h-4 w-5">
-            <span class="absolute left-0 top-0 h-0.5 w-5 bg-white"></span>
-            <span class="absolute left-0 top-1.5 h-0.5 w-5 bg-white"></span>
-            <span class="absolute left-0 top-3 h-0.5 w-5 bg-white"></span>
-          </span>
-        </button>
-      </div>
-    </nav>
-    <div id="mobileMenu" class="pointer-events-none absolute right-0 top-0 h-screen w-full max-w-sm translate-x-full border-l border-white/10 bg-[#090409]/95 p-8 opacity-0 backdrop-blur-2xl transition duration-500 md:hidden" aria-hidden="true">
-      <div class="flex items-center justify-between">
-        <p class="text-xs uppercase tracking-[0.4em] text-saffron/70">Navigate</p>
-        <button id="menuClose" class="rounded-full border border-white/10 px-3 py-1 text-xs text-white/70">Close</button>
-      </div>
-      <div class="mt-12 flex flex-col gap-6 text-2xl font-display text-white">
-        <a class="mobile-link" href="#home">Home</a>
-        <a class="mobile-link" href="#menu">Menu</a>
-        <a class="mobile-link" href="#experiences">Experiences</a>
-        <a class="mobile-link" href="#reservations">Reservations</a>
-        <a class="mobile-link" href="#gallery">Gallery</a>
-        <a class="mobile-link" href="#contact">Contact</a>
-      </div>
-      <div class="mt-12 rounded-3xl border border-white/10 bg-white/5 p-6">
-        <p class="text-sm text-white/60">Private dining, chef's table, and corporate evenings curated with signature hospitality.</p>
-      </div>
+      <nav>
+        <a href="#modules">Modules</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#security">Security</a>
+        <button class="btn btn-outline btn-sm" id="loginBtn">Login</button>
+        <button class="btn btn-primary btn-sm" id="trialBtn">Start Free Trial</button>
+      </nav>
     </div>
   </header>
 
-  <main id="home" class="relative z-10">
-    <section class="grain relative min-h-screen overflow-hidden">
-      <div class="hero-media absolute inset-0 overflow-hidden">
-        <video class="h-full w-full object-cover opacity-35" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80" aria-hidden="true">
-          <source src="https://cdn.coverr.co/videos/coverr-a-luxury-restaurant-ambience-1565616664960?download=1080p" type="video/mp4" />
-        </video>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(124,231,233,0.18),transparent_25%),radial-gradient(circle_at_80%_0%,rgba(231,176,75,0.18),transparent_22%)]"></div>
-        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80" alt="Fine dining table with candlelight" loading="lazy" class="hero-layer absolute left-[4%] top-[18%] hidden w-72 rounded-[2rem] border border-white/10 object-cover shadow-2xl shadow-black/40 lg:block" />
-        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80" alt="Elegant plated Indian fusion course" loading="lazy" class="hero-layer absolute bottom-[14%] right-[6%] hidden w-80 rounded-[2rem] border border-white/10 object-cover shadow-2xl shadow-black/40 xl:block" />
-      </div>
-      <div class="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pb-24 pt-36 lg:px-10">
-        <div class="max-w-4xl">
-          <p class="hero-kicker mb-6 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.45em] text-white/65 backdrop-blur-xl">A sensory fine-dining odyssey in Pune</p>
-          <h1 class="hero-title gold-foil font-display text-5xl font-semibold leading-[0.95] md:text-7xl lg:text-[7.5rem]">The Saffron Table</h1>
-          <p class="hero-sub typing mt-6 max-w-2xl text-lg text-white/70 md:text-2xl">Pune's Finest Indian Fusion Experience • Since 2024</p>
-          <p class="hero-copy mt-8 max-w-2xl text-base leading-8 text-white/60 md:text-lg">An intimate journey where Maharashtrian terroir, modern Indian artistry, and globally inspired technique converge into candlelit memories, chef-curated rituals, and unforgettable celebrations.</p>
-          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
-            <a id="heroCta" href="#reservations" class="tilt-target inline-flex w-fit items-center gap-3 rounded-full border border-saffron/40 bg-gradient-to-r from-saffron/20 to-maroon/30 px-7 py-4 text-sm font-semibold text-white shadow-glow transition duration-300 hover:-translate-y-1 hover:border-cyanlux/60 hover:shadow-cyan">
-              Reserve a Table
-              <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4"><path d="M5 12h14M13 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-            </a>
-            <a href="#menu" class="inline-flex w-fit items-center gap-3 rounded-full border border-white/10 bg-white/5 px-7 py-4 text-sm font-medium text-white/80 transition hover:border-white/20 hover:bg-white/10">Explore Signature Menu</a>
-          </div>
-          <div class="mt-14 flex flex-wrap gap-8 text-sm text-white/50">
-            <div><span class="block text-2xl font-semibold text-saffron">12+</span>Tasting creations</div>
-            <div><span class="block text-2xl font-semibold text-saffron">4.9/5</span>Private guest rating</div>
-            <div><span class="block text-2xl font-semibold text-saffron">24/7</span>Concierge reservations</div>
-          </div>
-        </div>
-        <a href="#story" class="scroll-arrow absolute bottom-8 left-1/2 inline-flex -translate-x-1/2 flex-col items-center gap-2 text-xs uppercase tracking-[0.35em] text-white/45">
-          Scroll
-          <span class="inline-flex h-12 w-8 items-start justify-center rounded-full border border-white/15 px-2 pt-2">
-            <span class="h-2 w-2 rounded-full bg-saffron"></span>
-          </span>
-        </a>
-      </div>
-    </section>
-
-    <section id="story" class="relative mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
-      <div class="grid gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+  <main>
+    <section class="hero container">
+      <div class="hero-grid">
         <div>
-          <p class="text-xs uppercase tracking-[0.45em] text-saffron/70">Our Story</p>
-          <h2 class="section-title mt-4 font-display text-4xl font-semibold md:text-6xl">A chef's memoir of spice, fire, memory, and modern Pune glamour.</h2>
-          <div id="storyCopy" class="mt-8 space-y-6 text-lg leading-8 text-white/65">
-            <p class="reveal-line">Inspired by royal Indian feasts and the cosmopolitan energy of Maharashtra, Chef Aarav Kamat envisioned a dining room where nostalgia meets precision—where saffron smoke, cultured butter, kokum acidity, and charcoal perfume tell one seamless story.</p>
-            <p class="reveal-line">Every course at The Saffron Table reflects artisanal produce, progressive plating, and deeply personal hospitality. The result is a restaurant designed for proposals, anniversaries, executive dinners, and travelers seeking Pune's most elevated table.</p>
+          <span class="tag">⚡ 14-Day Free Trial • USD Default • INR Toggle</span>
+          <h2>Build Your AI Revenue Team in Minutes.</h2>
+          <p>
+            Stadvix helps you automate lead generation, outreach, qualification, and growth operations using specialized AI modules.
+            Results vary by strategy and execution quality. No outcomes are guaranteed.
+          </p>
+          <div class="hero-cta">
+            <button class="btn btn-primary" id="heroTrialBtn">Start Free Trial</button>
+            <button class="btn btn-outline">See Live Demo</button>
           </div>
-          <div class="mt-12 grid gap-8 md:grid-cols-3">
-            <div class="glass rounded-3xl p-6">
-              <p class="text-xs uppercase tracking-[0.35em] text-cyanlux/70">Cuisine</p>
-              <p class="mt-3 text-xl font-semibold text-white">Indian fusion tasting</p>
-            </div>
-            <div class="glass rounded-3xl p-6">
-              <p class="text-xs uppercase tracking-[0.35em] text-cyanlux/70">Ambience</p>
-              <p class="mt-3 text-xl font-semibold text-white">Candlelit luxury</p>
-            </div>
-            <div class="glass rounded-3xl p-6">
-              <p class="text-xs uppercase tracking-[0.35em] text-cyanlux/70">Perfect for</p>
-              <p class="mt-3 text-xl font-semibold text-white">Celebrations & events</p>
-            </div>
-          </div>
-          <div class="relative mt-16 pl-10">
-            <div class="timeline-line absolute left-2 top-0 h-full w-px"></div>
-            <div class="timeline-entry relative mb-10">
-              <span class="absolute -left-10 top-2 h-4 w-4 rounded-full border border-saffron/40 bg-saffron/20"></span>
-              <p class="text-sm uppercase tracking-[0.35em] text-saffron/70">2024</p>
-              <h3 class="mt-2 font-display text-2xl text-white">The first chef's tasting salon opens.</h3>
-            </div>
-            <div class="timeline-entry relative mb-10">
-              <span class="absolute -left-10 top-2 h-4 w-4 rounded-full border border-saffron/40 bg-saffron/20"></span>
-              <p class="text-sm uppercase tracking-[0.35em] text-saffron/70">2025</p>
-              <h3 class="mt-2 font-display text-2xl text-white">Private dining and corporate soirées become signature rituals.</h3>
-            </div>
-            <div class="timeline-entry relative">
-              <span class="absolute -left-10 top-2 h-4 w-4 rounded-full border border-cyanlux/40 bg-cyanlux/20"></span>
-              <p class="text-sm uppercase tracking-[0.35em] text-cyanlux/70">2026</p>
-              <h3 class="mt-2 font-display text-2xl text-white">A curated luxury destination for international gourmands.</h3>
-            </div>
-          </div>
+          <div class="trust-line">No lock-in • Compliance-first messaging • Owner-controlled workflow</div>
         </div>
-        <div class="lg:sticky lg:top-28">
-          <div class="tilt-card relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-2xl shadow-black/30">
-            <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=1200&q=80" alt="Chef plating a luxury Indian fusion dish" loading="lazy" class="chef-photo h-[520px] w-full rounded-[1.6rem] object-cover" />
-            <div class="absolute inset-x-8 bottom-8 rounded-[1.5rem] border border-white/10 bg-black/35 p-6 backdrop-blur-xl">
-              <p class="text-xs uppercase tracking-[0.35em] text-saffron/70">Chef's philosophy</p>
-              <p class="mt-3 text-lg leading-7 text-white/75">"A tasting menu should feel like a silk sari in motion—weightless, rich, and impossible to forget."</p>
+        <div class="panel" aria-label="Live dashboard preview">
+          <div class="panel-head">
+            <strong>Mission Control</strong>
+            <span class="pill">AI Active</span>
+          </div>
+          <div class="panel-body">
+            <div class="metric-card">
+              <div class="label">Agent Runs (Today)</div>
+              <div class="value">146</div>
+              <div class="sub">+12% vs yesterday</div>
+            </div>
+            <div class="metric-card">
+              <div class="label">Lead Tasks Completed</div>
+              <div class="value">89</div>
+              <div class="sub">High-confidence 63</div>
+            </div>
+            <div class="metric-card">
+              <div class="label">Response Time</div>
+              <div class="value">1.8s</div>
+              <div class="sub">p95 stable</div>
+            </div>
+            <div class="metric-card">
+              <div class="label">System Status</div>
+              <div class="value">99.9%</div>
+              <div class="sub">Uptime target</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="menu" class="relative overflow-hidden px-6 py-24 lg:px-10 lg:py-32">
-      <div class="absolute inset-0 bg-radial opacity-80"></div>
-      <div class="relative mx-auto max-w-7xl">
-        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div class="max-w-2xl">
-            <p class="text-xs uppercase tracking-[0.45em] text-saffron/70">Signature Menu</p>
-            <h2 class="section-title mt-4 font-display text-4xl font-semibold md:text-6xl">An expressive menu designed like a twelve-course love letter.</h2>
-          </div>
-          <div class="flex flex-wrap gap-3">
-            <button class="spice-filter rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70" data-spice="all">All Spice</button>
-            <button class="spice-filter rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70" data-spice="mild">🌶 Mild</button>
-            <button class="spice-filter rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70" data-spice="medium">🌶🌶 Medium</button>
-            <button class="spice-filter rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70" data-spice="bold">🌶🌶🌶 Bold</button>
-          </div>
-        </div>
-
-        <div class="mt-12 overflow-x-auto hide-scrollbar">
-          <div id="categoryTabs" class="relative flex min-w-max gap-3 rounded-full border border-white/10 bg-white/5 p-2">
-            <span id="tabIndicator" class="absolute bottom-2 left-2 top-2 rounded-full bg-gradient-to-r from-saffron/20 to-cyanlux/15 shadow-glow transition-all duration-300"></span>
-            <button class="menu-tab relative z-10 rounded-full px-5 py-3 text-sm text-white" data-category="starters">Starters</button>
-            <button class="menu-tab relative z-10 rounded-full px-5 py-3 text-sm text-white/60" data-category="mains">Mains</button>
-            <button class="menu-tab relative z-10 rounded-full px-5 py-3 text-sm text-white/60" data-category="desserts">Desserts</button>
-            <button class="menu-tab relative z-10 rounded-full px-5 py-3 text-sm text-white/60" data-category="drinks">Drinks</button>
-            <button class="menu-tab relative z-10 rounded-full px-5 py-3 text-sm text-white/60" data-category="vegetarian">Vegetarian</button>
-          </div>
-        </div>
-
-        <div id="menuGrid" class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3"></div>
+    <section class="section container" id="modules">
+      <h3>Core AI Modules (MVP)</h3>
+      <p class="lead">Start with high-impact lead generation and conversion automations.</p>
+      <div class="grid-4">
+        <article class="card"><h4>ICP Finder AI</h4><p>Define ideal customer profiles from seed input and market context.</p><span class="badge">Live</span></article>
+        <article class="card"><h4>Lead Scoring AI</h4><p>Scores prospects by fit, intent, and conversion probability.</p><span class="badge">Live</span></article>
+        <article class="card"><h4>Cold Email Writer</h4><p>Generates personalized outreach drafts with multi-angle variants.</p><span class="badge">Live</span></article>
+        <article class="card"><h4>Follow-up Sequencer</h4><p>Creates structured follow-up sequences with timing suggestions.</p><span class="badge">Live</span></article>
+        <article class="card"><h4>Proposal Draft AI</h4><p>Builds concise offer-ready proposals for warm leads.</p><span class="badge">Beta</span></article>
+        <article class="card"><h4>ROI Reporter</h4><p>Summarizes campaign outputs into simple decision dashboards.</p><span class="badge">Beta</span></article>
+        <article class="card"><h4>CRM Auto Updater</h4><p>Formats notes and pushes clean CRM-ready records.</p><span class="badge">Coming Soon</span></article>
+        <article class="card"><h4>Sales Forecast Agent</h4><p>Projects next-cycle conversions from current pipeline quality.</p><span class="badge">Coming Soon</span></article>
       </div>
     </section>
 
-    <section id="gallery" class="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
-      <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-        <div class="max-w-2xl">
-          <p class="text-xs uppercase tracking-[0.45em] text-cyanlux/70">Gallery</p>
-          <h2 class="section-title mt-4 font-display text-4xl font-semibold md:text-6xl">An ever-unfolding visual tasting room with an editorial soul.</h2>
-        </div>
-        <p class="max-w-xl text-white/60">Swipe through candlelit service, jeweled plating, and intimate table settings curated to feel like a luxury hospitality campaign in motion.</p>
+    <section class="section container" id="pricing">
+      <h3>Pricing</h3>
+      <p class="lead">Default in USD. Users can switch to INR display anytime.</p>
+      <div class="pricing-toggle" role="group" aria-label="Currency toggle">
+        <button id="usdBtn" class="active">USD</button>
+        <button id="inrBtn">INR</button>
       </div>
-      <div id="galleryGrid" class="masonry mt-12"></div>
-      <div class="mt-8 text-center">
-        <button id="loadMoreGallery" class="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-white/75 transition hover:border-saffron/40 hover:bg-saffron/10">Load more stories</button>
-      </div>
-    </section>
-
-    <section id="experiences" class="bg-black/15 px-6 py-24 lg:px-10 lg:py-32">
-      <div class="mx-auto max-w-7xl">
-        <div class="max-w-2xl">
-          <p class="text-xs uppercase tracking-[0.45em] text-saffron/70">Experiences</p>
-          <h2 class="section-title mt-4 font-display text-4xl font-semibold md:text-6xl">Crafted evenings for romance, prestige, and private celebration.</h2>
-        </div>
-        <div class="mt-14 grid gap-8 lg:grid-cols-3">
-          <article class="flip-card h-[380px]">
-            <div class="flip-card-inner relative h-full w-full">
-              <div class="flip-face glass absolute inset-0 rounded-[2rem] p-8">
-                <p class="text-xs uppercase tracking-[0.35em] text-cyanlux/70">Private Dining</p>
-                <h3 class="mt-4 font-display text-3xl text-white">Discreet celebrations with bespoke floral styling.</h3>
-                <p class="mt-6 text-white/60">Ideal for anniversaries, proposals, and intimate milestone dinners.</p>
-              </div>
-              <div class="flip-face flip-back absolute inset-0 rounded-[2rem] border border-saffron/20 bg-gradient-to-br from-maroon/60 to-black p-8">
-                <p class="text-white/70">Seats 8–24 guests · dedicated maître d' · customizable tasting progression · live sitar or ambient jazz add-ons.</p>
-                <a href="#reservations" class="mt-10 inline-flex rounded-full border border-saffron/30 px-5 py-3 text-sm text-saffron">Plan a private evening</a>
-              </div>
-            </div>
-          </article>
-          <article class="flip-card h-[380px]">
-            <div class="flip-card-inner relative h-full w-full">
-              <div class="flip-face glass absolute inset-0 rounded-[2rem] p-8">
-                <p class="text-xs uppercase tracking-[0.35em] text-cyanlux/70">Chef's Table</p>
-                <h3 class="mt-4 font-display text-3xl text-white">A front-row seat to fire, fermentation, and finesse.</h3>
-                <p class="mt-6 text-white/60">Meet the chef, taste off-menu courses, and pair rare ingredients with story-led service.</p>
-              </div>
-              <div class="flip-face flip-back absolute inset-0 rounded-[2rem] border border-saffron/20 bg-gradient-to-br from-maroon/60 to-black p-8">
-                <p class="text-white/70">6 seats only · 14-course immersive tasting · seasonal welcomes · chef dialogue at every pass.</p>
-                <a href="#reservations" class="mt-10 inline-flex rounded-full border border-saffron/30 px-5 py-3 text-sm text-saffron">Request Chef's Table</a>
-              </div>
-            </div>
-          </article>
-          <article class="flip-card h-[380px]">
-            <div class="flip-card-inner relative h-full w-full">
-              <div class="flip-face glass absolute inset-0 rounded-[2rem] p-8">
-                <p class="text-xs uppercase tracking-[0.35em] text-cyanlux/70">Wine Pairing</p>
-                <h3 class="mt-4 font-display text-3xl text-white">Cellar-led harmony with each saffron-kissed course.</h3>
-                <p class="mt-6 text-white/60">Old and new world pours selected to elevate heat, smoke, sweetness, and texture.</p>
-              </div>
-              <div class="flip-face flip-back absolute inset-0 rounded-[2rem] border border-saffron/20 bg-gradient-to-br from-maroon/60 to-black p-8">
-                <p class="text-white/70">Sommelier consult · zero-proof luxury pairings · corporate package options · custom labels available.</p>
-                <a href="#reservations" class="mt-10 inline-flex rounded-full border border-saffron/30 px-5 py-3 text-sm text-saffron">Design a pairing</a>
-              </div>
-            </div>
-          </article>
-        </div>
+      <div class="grid-3" style="margin-top:14px;">
+        <article class="card price-card">
+          <h4>Launch</h4>
+          <div class="price" data-usd="$29" data-inr="₹1,999">$29</div>
+          <small>/month</small>
+          <ul class="price-list">
+            <li>5 active agents</li>
+            <li>Core lead-gen modules</li>
+            <li>Basic analytics</li>
+          </ul>
+          <button class="btn btn-outline">Start Free Trial</button>
+        </article>
+        <article class="card price-card">
+          <span class="popular">MOST POPULAR</span>
+          <h4>Scale</h4>
+          <div class="price" data-usd="$79" data-inr="₹6,499">$79</div>
+          <small>/month</small>
+          <ul class="price-list">
+            <li>20 active agents</li>
+            <li>All current modules</li>
+            <li>Priority support</li>
+          </ul>
+          <button class="btn btn-primary">Start Free Trial</button>
+        </article>
+        <article class="card price-card">
+          <h4>Command</h4>
+          <div class="price" data-usd="$299" data-inr="₹24,999">$299</div>
+          <small>/month</small>
+          <ul class="price-list">
+            <li>Unlimited agents</li>
+            <li>API access</li>
+            <li>Dedicated manager</li>
+          </ul>
+          <button class="btn btn-outline">Start Free Trial</button>
+        </article>
       </div>
     </section>
 
-    <section id="reservations" class="relative mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
-      <div class="grid gap-12 xl:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <p class="text-xs uppercase tracking-[0.45em] text-saffron/70">Reservations</p>
-          <h2 class="section-title mt-4 font-display text-4xl font-semibold md:text-6xl">Secure an unforgettable table in under a minute.</h2>
-          <p class="mt-8 max-w-xl text-lg leading-8 text-white/60">Select your preferred date, guests, and experience. Our concierge team confirms all premium requests instantly for seamless planning.</p>
-          <div id="calendar" class="glass mt-10 rounded-[2rem] p-6"></div>
+    <section class="section container" id="dashboard">
+      <h3>User Dashboard (Inside App)</h3>
+      <p class="lead">Workspace, history, usage, and temporary QR billing flow are included for submission MVP.</p>
+
+      <div class="dashboard active" id="appDashboard">
+        <div class="tabs">
+          <button class="tab active" data-tab="workspaceTab">Workspace</button>
+          <button class="tab" data-tab="historyTab">History</button>
+          <button class="tab" data-tab="billingTab">Billing</button>
+          <button class="tab" data-tab="adminTab">Admin</button>
         </div>
-        <div class="glass rounded-[2rem] p-6 md:p-8">
-          <form id="reservationForm" class="space-y-6" aria-label="Reservation form">
-            <div class="grid gap-6 md:grid-cols-2">
-              <div class="field-group relative pt-6">
-                <input id="name" type="text" placeholder=" " required class="w-full border-b border-white/15 bg-transparent pb-3 text-white outline-none transition focus:border-saffron" />
-                <label for="name" class="pointer-events-none absolute left-0 top-6 text-sm text-white/45">Guest Name</label>
-              </div>
-              <div class="field-group relative pt-6">
-                <input id="email" type="email" placeholder=" " required class="w-full border-b border-white/15 bg-transparent pb-3 text-white outline-none transition focus:border-saffron" />
-                <label for="email" class="pointer-events-none absolute left-0 top-6 text-sm text-white/45">Email Address</label>
-              </div>
-            </div>
-            <div class="grid gap-6 md:grid-cols-2">
-              <div class="field-group relative pt-6">
-                <input id="phone" type="tel" placeholder=" " required class="w-full border-b border-white/15 bg-transparent pb-3 text-white outline-none transition focus:border-saffron" />
-                <label for="phone" class="pointer-events-none absolute left-0 top-6 text-sm text-white/45">Phone Number</label>
-              </div>
-              <div class="field-group relative pt-6">
-                <select id="experienceSelect" required class="w-full border-b border-white/15 bg-transparent pb-3 text-white outline-none transition focus:border-saffron">
-                  <option value="" class="bg-noir"> </option>
-                  <option value="Signature Dining" class="bg-noir">Signature Dining</option>
-                  <option value="Chef's Table" class="bg-noir">Chef's Table</option>
-                  <option value="Private Dining" class="bg-noir">Private Dining</option>
-                  <option value="Corporate Event" class="bg-noir">Corporate Event</option>
-                </select>
-                <label for="experienceSelect" class="pointer-events-none absolute left-0 top-6 text-sm text-white/45">Experience Type</label>
-              </div>
-            </div>
-            <div class="grid gap-6 md:grid-cols-2">
-              <div class="field-group relative pt-6">
-                <input id="guests" type="number" min="1" max="24" placeholder=" " required class="w-full border-b border-white/15 bg-transparent pb-3 text-white outline-none transition focus:border-saffron" />
-                <label for="guests" class="pointer-events-none absolute left-0 top-6 text-sm text-white/45">Number of Guests</label>
-              </div>
-              <div class="field-group relative pt-6">
-                <input id="selectedDate" type="text" placeholder=" " readonly required class="w-full border-b border-white/15 bg-transparent pb-3 text-white outline-none transition focus:border-saffron" />
-                <label for="selectedDate" class="pointer-events-none absolute left-0 top-6 text-sm text-white/45">Selected Date</label>
-              </div>
+
+        <div id="workspaceTab" class="tab-content active card">
+          <div class="workspace">
+            <div>
+              <label for="moduleSelect">Module</label>
+              <select id="moduleSelect">
+                <option>ICP Finder AI</option>
+                <option>Lead Scoring AI</option>
+                <option>Cold Email Writer</option>
+                <option>Follow-up Sequencer</option>
+                <option>Proposal Draft AI</option>
+              </select>
+              <label for="promptInput" style="margin-top:10px; display:block;">Prompt / Input</label>
+              <textarea id="promptInput" rows="8" placeholder="Example: Generate a personalized cold email for B2B SaaS founder in India."></textarea>
+              <button class="btn btn-primary" id="runModuleBtn" style="margin-top:10px;">Run Module</button>
             </div>
             <div>
-              <p class="mb-4 text-sm uppercase tracking-[0.3em] text-white/45">Availability</p>
-              <div id="timeSlots" class="grid grid-cols-2 gap-3 sm:grid-cols-4"></div>
-            </div>
-            <div class="field-group relative pt-6">
-              <textarea id="notes" rows="4" placeholder=" " class="w-full border-b border-white/15 bg-transparent pb-3 text-white outline-none transition focus:border-saffron"></textarea>
-              <label for="notes" class="pointer-events-none absolute left-0 top-6 text-sm text-white/45">Celebration notes, dietary requests, or seating preferences</label>
-            </div>
-            <button type="submit" class="inline-flex items-center gap-3 rounded-full border border-saffron/40 bg-gradient-to-r from-saffron/20 to-maroon/30 px-7 py-4 text-sm font-semibold text-white shadow-glow transition duration-300 hover:-translate-y-1 hover:border-cyanlux/60 hover:shadow-cyan">Confirm Reservation</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section id="testimonials" class="overflow-hidden px-6 py-24 lg:px-10 lg:py-32">
-      <div class="mx-auto max-w-7xl">
-        <div class="max-w-2xl">
-          <p class="text-xs uppercase tracking-[0.45em] text-cyanlux/70">Testimonials</p>
-          <h2 class="section-title mt-4 font-display text-4xl font-semibold md:text-6xl">Admired by discerning diners, destination travelers, and corporate hosts.</h2>
-        </div>
-        <div id="testimonialTrack" class="mt-14 flex gap-6"></div>
-      </div>
-    </section>
-
-    <section id="contact" class="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
-      <div class="grid gap-10 xl:grid-cols-[1.05fr_0.95fr]">
-        <div>
-          <p class="text-xs uppercase tracking-[0.45em] text-saffron/70">Location & Contact</p>
-          <h2 class="section-title mt-4 font-display text-4xl font-semibold md:text-6xl">Where Pune's most luxurious evenings come alive.</h2>
-          <div class="glass mt-10 overflow-hidden rounded-[2rem] p-3">
-            <div class="relative overflow-hidden rounded-[1.5rem]">
-              <iframe title="The Saffron Table location in Pune" src="https://www.google.com/maps?q=Pune%2C%20Maharashtra%2C%20India&z=13&output=embed" class="h-[380px] w-full border-0 grayscale-[0.35] contrast-125"></iframe>
-              <div class="pointer-events-none absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-3">
-                <span class="inline-flex h-5 w-5 rounded-full bg-saffron shadow-[0_0_25px_rgba(231,176,75,0.8)]"></span>
-                <span class="rounded-full border border-white/10 bg-black/60 px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/70">Koregaon Park, Pune</span>
+              <strong>Output Preview</strong>
+              <div class="run-box" id="outputBox">Your AI output will appear here...</div>
+              <div class="usage-bar-wrap">
+                <small id="usageText">Usage: 0 / 100 credits</small>
+                <div class="usage-bar"><div id="usageFill"></div></div>
               </div>
             </div>
           </div>
         </div>
-        <div class="glass rounded-[2rem] p-6 md:p-8">
-          <div class="grid gap-6 sm:grid-cols-2">
-            <div>
-              <p class="text-xs uppercase tracking-[0.35em] text-cyanlux/70">Call</p>
-              <a href="tel:+912012345678" class="mt-3 block text-xl text-white">+91 20 1234 5678</a>
-            </div>
-            <div>
-              <p class="text-xs uppercase tracking-[0.35em] text-cyanlux/70">Email</p>
-              <a href="mailto:reservations@thesaffrontable.in" class="mt-3 block text-xl text-white">reservations@thesaffrontable.in</a>
-            </div>
-            <div>
-              <p class="text-xs uppercase tracking-[0.35em] text-cyanlux/70">Hours</p>
-              <p class="mt-3 text-xl text-white">6:00 PM – 12:00 AM</p>
-            </div>
-            <div>
-              <p class="text-xs uppercase tracking-[0.35em] text-cyanlux/70">Address</p>
-              <p class="mt-3 text-xl text-white">Koregaon Park, Pune, Maharashtra</p>
-            </div>
-          </div>
-          <form class="mt-10 space-y-6" aria-label="Contact form">
-            <div class="field-group relative pt-6">
-              <input type="text" id="contactName" placeholder=" " class="w-full border-b border-white/15 bg-transparent pb-3 text-white outline-none focus:border-saffron" />
-              <label for="contactName" class="pointer-events-none absolute left-0 top-6 text-sm text-white/45">Your Name</label>
-            </div>
-            <div class="field-group relative pt-6">
-              <input type="email" id="contactEmail" placeholder=" " class="w-full border-b border-white/15 bg-transparent pb-3 text-white outline-none focus:border-saffron" />
-              <label for="contactEmail" class="pointer-events-none absolute left-0 top-6 text-sm text-white/45">Email Address</label>
-            </div>
-            <div class="field-group relative pt-6">
-              <textarea id="contactMessage" rows="4" placeholder=" " class="w-full border-b border-white/15 bg-transparent pb-3 text-white outline-none focus:border-saffron"></textarea>
-              <label for="contactMessage" class="pointer-events-none absolute left-0 top-6 text-sm text-white/45">Tell us about your occasion</label>
-            </div>
-            <button type="button" class="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm text-white/75 transition hover:border-saffron/40 hover:bg-saffron/10">Send Enquiry</button>
-          </form>
+
+        <div id="historyTab" class="tab-content card">
+          <h4>Run History</h4>
+          <div id="historyList" style="color:var(--muted);">No runs yet. Execute a module to see history.</div>
         </div>
+
+        <div id="billingTab" class="tab-content card">
+          <h4>Billing (Temporary QR Mode)</h4>
+          <p style="color:var(--muted);">Until gateway integration is live, users can pay via QR and submit transaction ID for manual activation.</p>
+          <div class="qr-box">
+            <img src="https://via.placeholder.com/320x320.png?text=Replace+with+Your+QR" id="qrImage" alt="Payment QR code" />
+            <span class="status" id="paymentStatus">Status: Pending Verification</span>
+            <input id="txnIdInput" placeholder="Enter UPI transaction/reference ID" />
+            <button class="btn btn-outline" id="submitTxnBtn">Submit Payment Proof</button>
+          </div>
+        </div>
+
+        <div id="adminTab" class="tab-content card">
+          <h4>Admin Quick Panel</h4>
+          <p style="color:var(--muted);">Use admin mode in MVP to approve submitted transaction IDs.</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
+            <input id="adminCodeInput" placeholder="Enter admin code" style="max-width:260px;" />
+            <button class="btn btn-outline" id="adminLoginBtn">Enable Admin</button>
+          </div>
+          <div id="adminState" style="color:var(--muted);">Admin mode is locked.</div>
+          <button class="btn btn-primary" id="approvePaymentBtn" style="margin-top:10px; display:none;">Approve Latest Payment</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="security">
+      <h3>Security & Compliance Notes</h3>
+      <div class="grid-3">
+        <article class="card"><h4>Owner-controlled Access</h4><p>Role-based controls and auditable actions are required in production mode.</p></article>
+        <article class="card"><h4>No Guaranteed Results</h4><p>Stadvix provides AI workflow tools; business outcomes vary by execution.</p></article>
+        <article class="card"><h4>Payment Safety</h4><p>Use Stripe/Razorpay for automated subscriptions after submission phase.</p></article>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-white/10 px-6 py-10 lg:px-10">
-    <div class="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
-      <div>
-        <p class="font-display text-2xl text-white">The Saffron Table</p>
-        <p class="mt-2 text-sm text-white/45">Luxury Indian fusion fine dining in Pune, Maharashtra.</p>
-      </div>
-      <div class="flex items-center gap-4">
-        <a href="#" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:scale-110 hover:border-saffron/40 hover:text-saffron" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-5 w-5"><rect x="3" y="3" width="18" height="18" rx="5" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="#" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:scale-110 hover:border-saffron/40 hover:text-saffron" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.5 1.6-1.5h1.7V4.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1V11H8v3h2.4v8h3.1Z"/></svg>
-        </a>
-        <a href="#" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:scale-110 hover:border-saffron/40 hover:text-saffron" aria-label="X">
-          <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5"><path d="m18.9 2 2.4 0-5.2 5.9L22 22h-4.7l-3.7-4.9L9.2 22H6.8l5.6-6.4L2 2h4.8l3.3 4.4L13.9 2h5Z"/></svg>
-        </a>
-      </div>
-      <p class="text-sm text-white/40">© 2026 The Saffron Table. Crafted for unforgettable evenings.</p>
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Stadvix. Results vary by strategy and execution. No outcomes are guaranteed.
     </div>
   </footer>
 
-  <div id="menuModal" class="pointer-events-none fixed inset-0 z-[80] flex items-center justify-center bg-black/70 px-4 opacity-0 backdrop-blur-md transition duration-300" aria-hidden="true">
-    <div class="relative w-full max-w-3xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#0d050b]">
-      <button data-close-modal class="absolute right-5 top-5 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/30 text-white/70">✕</button>
-      <div class="grid gap-0 md:grid-cols-[0.95fr_1.05fr]">
-        <div class="relative min-h-[300px] overflow-hidden">
-          <img id="modalImage" src="" alt="" class="h-full w-full object-cover" />
-          <div id="ingredientBurst" class="pointer-events-none absolute inset-0"></div>
-        </div>
-        <div class="p-8 md:p-10">
-          <p id="modalCategory" class="text-xs uppercase tracking-[0.35em] text-saffron/70"></p>
-          <h3 id="modalTitle" class="mt-4 font-display text-4xl text-white"></h3>
-          <p id="modalDescription" class="mt-5 text-white/65"></p>
-          <div class="mt-6 flex flex-wrap gap-2" id="modalIngredients"></div>
-          <div class="mt-8 flex items-center justify-between">
-            <span id="modalPrice" class="text-2xl font-semibold text-saffron"></span>
-            <a href="#reservations" data-close-modal class="rounded-full border border-saffron/30 px-5 py-3 text-sm text-saffron">Reserve Table</a>
-          </div>
-        </div>
+  <div class="modal" id="loginModal" aria-hidden="true">
+    <div class="modal-card">
+      <h4>Login / Signup (MVP)</h4>
+      <p style="color:var(--muted); margin-top:0;">This submission version stores session locally. Replace with backend auth in production.</p>
+      <input id="userEmail" type="email" placeholder="Email" style="margin-bottom:10px;" />
+      <input id="userPass" type="password" placeholder="Password" />
+      <div style="display:flex; gap:10px; margin-top:12px;">
+        <button class="btn btn-primary" id="loginSubmitBtn">Continue</button>
+        <button class="btn btn-outline" id="closeModalBtn">Close</button>
       </div>
-    </div>
-  </div>
-
-  <div id="lightbox" class="pointer-events-none fixed inset-0 z-[80] flex items-center justify-center bg-black/80 px-4 opacity-0 backdrop-blur-md transition duration-300" aria-hidden="true">
-    <button data-close-lightbox class="absolute right-5 top-5 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70">✕</button>
-    <div class="w-full max-w-5xl overflow-hidden rounded-[2rem] border border-white/10 bg-black/30">
-      <img id="lightboxImage" src="" alt="Expanded gallery item" class="max-h-[82vh] w-full object-cover" />
-    </div>
-  </div>
-
-  <div id="successModal" class="pointer-events-none fixed inset-0 z-[80] flex items-center justify-center bg-black/70 px-4 opacity-0 backdrop-blur-md transition duration-300" aria-hidden="true">
-    <div class="w-full max-w-lg rounded-[2rem] border border-white/10 bg-[#0b0409] p-8 text-center shadow-2xl shadow-black/50">
-      <div class="mx-auto inline-flex h-20 w-20 items-center justify-center rounded-full border border-saffron/30 bg-saffron/10 text-saffron">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-10 w-10"><path d="m5 13 4 4L19 7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <h3 class="mt-6 font-display text-4xl text-white">Reservation Received</h3>
-      <p class="mt-4 text-white/65">Thank you for choosing The Saffron Table. Our concierge will confirm your premium dining experience shortly.</p>
-      <button data-close-success class="mt-8 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm text-white/75">Close</button>
     </div>
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const loader = document.getElementById('loader');
-      if (loader) setTimeout(() => loader.classList.add('hidden'), 1600);
-    });
-    window.addEventListener('load', () => document.getElementById('loader')?.classList.add('hidden'));
-    window.addEventListener('error', () => document.getElementById('loader')?.classList.add('hidden'), true);
-    window.gsap = window.gsap || {
-      registerPlugin() {},
-      to() {},
-      from() {},
-      fromTo() {},
-      timeline() {
-        return { from() { return this; }, to() { return this; }, fromTo() { return this; } };
-      },
-      utils: { random(min, max) { return (Number(min) + Number(max)) / 2; } },
-      ticker: { add() {}, lagSmoothing() {} }
+    const state = {
+      creditsUsed: 0,
+      history: [],
+      pendingTxn: null,
+      admin: false,
+      currency: 'USD'
     };
-    window.ScrollTrigger = window.ScrollTrigger || { update() {}, batch() {} };
-    window.Lenis = window.Lenis || function LenisFallback() { return { on() {}, raf() {} }; };
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-  <script>
-    const menuItems = [
-      { title: 'Saffron Smoke Kulcha', category: 'starters', spice: 'mild', price: '₹780', image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80', description: 'Charcoal blistered bread layered with smoked ghee, burrata mousse, and pickled shallots.', ingredients: ['Saffron', 'Burrata', 'Shallots', 'Smoked Ghee'] },
-      { title: 'Kokum Lobster Chaat', category: 'starters', spice: 'medium', price: '₹1,480', image: 'https://images.unsplash.com/photo-1559847844-d721426d6edc?auto=format&fit=crop&w=1200&q=80', description: 'Butter-poached lobster, kokum gel, and puffed lotus seeds with tamarind lace.', ingredients: ['Lobster', 'Kokum', 'Tamarind', 'Lotus Seed'] },
-      { title: 'Truffle Galouti Sliders', category: 'starters', spice: 'mild', price: '₹920', image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?auto=format&fit=crop&w=1200&q=80', description: 'Velvet lamb galouti nestled in brioche with truffle aioli and mint dust.', ingredients: ['Lamb', 'Truffle', 'Mint', 'Brioche'] },
-      { title: 'Coal-Roasted Lamb Raan', category: 'mains', spice: 'bold', price: '₹2,450', image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80', description: 'Twenty-four-hour marinated lamb, ember roast jus, and saffron pomme purée.', ingredients: ['Lamb', 'Saffron', 'Black Garlic', 'Jus'] },
-      { title: 'Miso Butter Paneer', category: 'mains', spice: 'medium', price: '₹1,240', image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=1200&q=80', description: 'Tandoor-finished paneer with velvety makhani miso glaze and charred greens.', ingredients: ['Paneer', 'Miso', 'Tomato', 'Kasuri Methi'] },
-      { title: 'Malabar Sea Bass', category: 'mains', spice: 'mild', price: '₹1,980', image: 'https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=1200&q=80', description: 'Sea bass with coconut velouté, curry leaf oil, and citrus caviar pearls.', ingredients: ['Sea Bass', 'Coconut', 'Curry Leaf', 'Finger Lime'] },
-      { title: 'Rose Pistachio Rasmalai', category: 'desserts', spice: 'mild', price: '₹680', image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1200&q=80', description: 'A cloud-light rasmalai finished with rose foam, pistachio praline, and saffron milk.', ingredients: ['Rose', 'Pistachio', 'Saffron', 'Milk'] },
-      { title: 'Dark Chocolate Gulab', category: 'desserts', spice: 'medium', price: '₹740', image: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1200&q=80', description: 'Warm gulab jamun center wrapped in dark chocolate glaze with sea salt caramel.', ingredients: ['Chocolate', 'Cardamom', 'Sea Salt', 'Caramel'] },
-      { title: 'Saffron Negroni', category: 'drinks', spice: 'medium', price: '₹720', image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80', description: 'Aromatic gin, saffron vermouth, bitter orange, and smoked citrus mist.', ingredients: ['Gin', 'Saffron', 'Orange', 'Smoke'] },
-      { title: 'Kesar Espresso Martini', category: 'drinks', spice: 'mild', price: '₹760', image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=1200&q=80', description: 'Cold brew, vanilla vodka, and saffron cream with gold dust.', ingredients: ['Coffee', 'Vodka', 'Vanilla', 'Gold Dust'] },
-      { title: 'Charred Broccoli Nihari', category: 'vegetarian', spice: 'bold', price: '₹1,180', image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80', description: 'Slow-cooked nihari-inspired sauce with charred broccoli steaks and almond crunch.', ingredients: ['Broccoli', 'Almond', 'Nihari Spice', 'Onion'] },
-      { title: 'Jackfruit Biryani Sphere', category: 'vegetarian', spice: 'medium', price: '₹1,060', image: 'https://images.unsplash.com/photo-1701579231341-f910a174469c?auto=format&fit=crop&w=1200&q=80', description: 'A deconstructed biryani dome with jackfruit confit, saffron vapour, and crisp onions.', ingredients: ['Jackfruit', 'Saffron', 'Rice', 'Crisp Onion'] }
-    ];
 
-    const galleryItems = [
-      { title: 'Candlelit Arrival', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80' },
-      { title: 'Signature Tasting Course', image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80' },
-      { title: 'Chef at the Pass', image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=1200&q=80' },
-      { title: 'Private Dining Setting', image: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80' },
-      { title: 'Gold Hour Cocktails', image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80' },
-      { title: 'Dessert Finale', image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1200&q=80' },
-      { title: 'Lounge Atmosphere', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80' },
-      { title: 'Curated Table Styling', image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80' },
-      { title: 'Fusion Plating Detail', image: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80' }
-    ];
+    const outputBox = document.getElementById('outputBox');
+    const usageText = document.getElementById('usageText');
+    const usageFill = document.getElementById('usageFill');
+    const historyList = document.getElementById('historyList');
+    const paymentStatus = document.getElementById('paymentStatus');
 
-    const testimonials = [
-      { name: 'Riya & Karan', quote: 'The most beautiful anniversary dinner we have experienced in India—elegant, intimate, and flawlessly choreographed.', title: 'Anniversary Guests' },
-      { name: 'M. Deshpande', quote: 'From executive hosting to wine pairings, every detail felt globally benchmarked yet deeply rooted in Indian warmth.', title: 'Corporate Host' },
-      { name: 'Alicia Moore', quote: 'I booked on a whim while visiting Pune and found a restaurant with the soul of a boutique luxury hotel.', title: 'International Traveler' },
-      { name: 'Saanvi Kulkarni', quote: 'Each course arrived like a story chapter. The saffron accents, the service, the pacing—absolutely award-worthy.', title: 'Food Critic' }
-    ];
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    const lenis = prefersReduced ? null : new Lenis({ duration: 1.15, smoothWheel: true, lerp: 0.08, touchMultiplier: 1.1 });
-    if (lenis) {
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((time) => lenis.raf(time * 1000));
-      gsap.ticker.lagSmoothing(0);
+    function updateUsage() {
+      const pct = Math.min((state.creditsUsed / 100) * 100, 100);
+      usageText.textContent = `Usage: ${state.creditsUsed} / 100 credits`;
+      usageFill.style.width = `${pct}%`;
     }
 
-    const $ = (selector, scope = document) => scope.querySelector(selector);
-    const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
-
-    function splitTextLines(elements) {
-      elements.forEach((el) => {
-        const words = el.textContent.trim().split(' ');
-        el.innerHTML = words.map((word) => `<span class="split-line"><span>${word}&nbsp;</span></span>`).join('');
-      });
-    }
-
-    splitTextLines([$('.hero-title'), ...$$('.reveal-line')]);
-
-    const heroTyping = $('.hero-sub');
-    const targetText = heroTyping.textContent;
-    heroTyping.textContent = '';
-    let typingIndex = 0;
-    const typeInterval = setInterval(() => {
-      heroTyping.textContent += targetText[typingIndex] || '';
-      typingIndex += 1;
-      if (typingIndex > targetText.length) clearInterval(typeInterval);
-    }, prefersReduced ? 0 : 42);
-
-    function setNavState() {
-      const navbar = $('#navbar');
-      if (window.scrollY > 24) navbar.classList.add('nav-solid');
-      else navbar.classList.remove('nav-solid');
-    }
-    setNavState();
-    window.addEventListener('scroll', setNavState, { passive: true });
-
-    const cursorGlow = $('.cursor-glow');
-    const cursorDot = $('.cursor-dot');
-    if (!prefersReduced && window.innerWidth >= 768) {
-      window.addEventListener('pointermove', (event) => {
-        gsap.to(cursorGlow, { x: event.clientX, y: event.clientY, duration: 0.45, ease: 'power3.out' });
-        gsap.to(cursorDot, { x: event.clientX, y: event.clientY, duration: 0.12, ease: 'power2.out' });
-      });
-    }
-
-    function applyTilt(targets, amount = 10) {
-      targets.forEach((card) => {
-        card.addEventListener('pointermove', (event) => {
-          if (window.innerWidth < 768) return;
-          const rect = card.getBoundingClientRect();
-          const px = (event.clientX - rect.left) / rect.width - 0.5;
-          const py = (event.clientY - rect.top) / rect.height - 0.5;
-          gsap.to(card, { rotateY: px * amount, rotateX: -py * amount, transformPerspective: 1000, duration: 0.35 });
-        });
-        card.addEventListener('pointerleave', () => gsap.to(card, { rotateY: 0, rotateX: 0, duration: 0.5, ease: 'power3.out' }));
-      });
-    }
-
-    applyTilt([$('.tilt-card'), $('#heroCta')].filter(Boolean), 12);
-
-    const menuGrid = $('#menuGrid');
-    const tabIndicator = $('#tabIndicator');
-    const tabs = $$('.menu-tab');
-    let activeCategory = 'starters';
-    let activeSpice = 'all';
-
-    function renderMenu() {
-      const filtered = menuItems.filter((item) => item.category === activeCategory && (activeSpice === 'all' || item.spice === activeSpice));
-      menuGrid.innerHTML = filtered.map((item, index) => `
-        <article class="menu-card group glass relative overflow-hidden rounded-[2rem]" data-index="${menuItems.indexOf(item)}">
-          <button class="wishlist absolute right-5 top-5 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black/30 text-white/70 transition hover:scale-110" aria-label="Add ${item.title} to wishlist">♡</button>
-          <div class="overflow-hidden">
-            <img src="${item.image}" alt="${item.title}" loading="lazy" class="menu-image h-72 w-full object-cover transition duration-700" />
-          </div>
-          <div class="p-6">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <p class="text-xs uppercase tracking-[0.35em] text-cyanlux/70">${item.category}</p>
-                <h3 class="mt-3 font-display text-3xl text-white">${item.title}</h3>
-              </div>
-              <span class="menu-price rounded-full border border-saffron/30 bg-saffron/10 px-4 py-2 text-sm text-saffron">${item.price}</span>
-            </div>
-            <p class="mt-4 line-clamp-3 text-white/60">${item.description}</p>
-            <div class="mt-6 flex items-center justify-between">
-              <span class="rounded-full border border-white/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/45">${item.spice} spice</span>
-              <button class="open-menu-modal inline-flex items-center gap-2 text-sm text-saffron">View Dish <span>↗</span></button>
-            </div>
-          </div>
-        </article>
+    function appendHistory(module, prompt, result) {
+      state.history.unshift({ module, prompt, result, at: new Date().toLocaleString() });
+      historyList.innerHTML = state.history.map(item => `
+        <div style="border:1px solid #2f3c62; border-radius:10px; padding:10px; margin-bottom:10px;">
+          <div><strong>${item.module}</strong> • <small style="color:#9cb0da">${item.at}</small></div>
+          <div style="color:#9cb0da; margin-top:5px;">Input: ${item.prompt.slice(0, 120)}</div>
+          <div style="margin-top:6px;">${item.result.slice(0, 180)}...</div>
+        </div>
       `).join('');
-
-      $$('.menu-card').forEach((card, idx) => {
-        gsap.fromTo(card, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', delay: idx * 0.06 });
-      });
-      bindMenuCards();
     }
 
-    function moveTabIndicator(target) {
-      tabIndicator.style.width = `${target.offsetWidth}px`;
-      tabIndicator.style.transform = `translateX(${target.offsetLeft}px)`;
-    }
-
-    tabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        activeCategory = tab.dataset.category;
-        tabs.forEach((item) => item.classList.toggle('text-white', item === tab));
-        tabs.forEach((item) => item.classList.toggle('text-white/60', item !== tab));
-        moveTabIndicator(tab);
-        renderMenu();
-      });
-    });
-    moveTabIndicator(tabs[0]);
-
-    $$('.spice-filter').forEach((button) => {
-      button.addEventListener('click', () => {
-        activeSpice = button.dataset.spice;
-        $$('.spice-filter').forEach((el) => el.classList.remove('border-saffron/40', 'bg-saffron/10', 'text-white'));
-        button.classList.add('border-saffron/40', 'bg-saffron/10', 'text-white');
-        renderMenu();
-      });
-    });
-    $('.spice-filter').classList.add('border-saffron/40', 'bg-saffron/10', 'text-white');
-
-    const menuModal = $('#menuModal');
-    function spawnIngredients() {
-      const burst = $('#ingredientBurst');
-      burst.innerHTML = '';
-      for (let i = 0; i < 10; i += 1) {
-        const dot = document.createElement('span');
-        dot.className = 'absolute h-2 w-2 rounded-full';
-        dot.style.background = i % 2 === 0 ? 'rgba(231,176,75,0.9)' : 'rgba(124,231,233,0.85)';
-        dot.style.left = '50%';
-        dot.style.top = '50%';
-        burst.appendChild(dot);
-        gsap.fromTo(dot, { x: 0, y: 0, opacity: 1, scale: 1 }, { x: gsap.utils.random(-140, 140), y: gsap.utils.random(-140, 140), opacity: 0, scale: 0.1, duration: 1.1, ease: 'power3.out' });
-      }
-    }
-    function openMenuModal(item) {
-      $('#modalImage').src = item.image;
-      $('#modalImage').alt = item.title;
-      $('#modalCategory').textContent = item.category;
-      $('#modalTitle').textContent = item.title;
-      $('#modalDescription').textContent = item.description;
-      $('#modalPrice').textContent = item.price;
-      $('#modalIngredients').innerHTML = item.ingredients.map((ingredient) => `<span class="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs uppercase tracking-[0.2em] text-white/55">${ingredient}</span>`).join('');
-      menuModal.classList.remove('pointer-events-none', 'opacity-0');
-      menuModal.setAttribute('aria-hidden', 'false');
-      gsap.fromTo(menuModal.firstElementChild, { y: 30, scale: 0.96 }, { y: 0, scale: 1, duration: 0.55, ease: 'power3.out' });
-      spawnIngredients();
-    }
-    function closeMenuModal() {
-      menuModal.classList.add('pointer-events-none', 'opacity-0');
-      menuModal.setAttribute('aria-hidden', 'true');
-    }
-    function bindMenuCards() {
-      $$('.wishlist', menuGrid).forEach((btn) => {
-        btn.addEventListener('click', (event) => {
-          event.stopPropagation();
-          btn.textContent = btn.textContent === '♡' ? '♥' : '♡';
-          gsap.fromTo(btn, { scale: 0.8 }, { scale: 1.15, duration: 0.18, yoyo: true, repeat: 1 });
-        });
-      });
-      $$('.menu-card', menuGrid).forEach((card) => {
-        applyTilt([card], 8);
-        const item = menuItems[card.dataset.index];
-        card.addEventListener('click', (event) => {
-          if (event.target.closest('.wishlist')) return;
-          openMenuModal(item);
-        });
-      });
-      $$('.open-menu-modal', menuGrid).forEach((button) => button.addEventListener('click', (event) => {
-        event.stopPropagation();
-        openMenuModal(menuItems[event.currentTarget.closest('.menu-card').dataset.index]);
-      }));
-    }
-    renderMenu();
-
-    menuModal.addEventListener('click', (event) => {
-      if (event.target === menuModal || event.target.closest('[data-close-modal]')) closeMenuModal();
-    });
-
-    const galleryGrid = $('#galleryGrid');
-    let galleryCount = 6;
-    function renderGallery() {
-      galleryGrid.innerHTML = galleryItems.slice(0, galleryCount).map((item, index) => `
-        <figure class="gallery-item group tilt-card relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5" data-index="${index}">
-          <img src="${item.image}" alt="${item.title}" loading="lazy" class="w-full object-cover transition duration-700" />
-          <figcaption class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-black/10 to-transparent p-6 opacity-0 transition duration-300 group-hover:opacity-100">
-            <div>
-              <p class="text-xs uppercase tracking-[0.35em] text-cyanlux/80">Gallery Story</p>
-              <p class="mt-3 font-display text-2xl text-white">${item.title}</p>
-            </div>
-          </figcaption>
-        </figure>
-      `).join('');
-      $$('.gallery-item').forEach((item) => applyTilt([item], 6));
-      bindGalleryLightbox();
-    }
-    renderGallery();
-
-    $('#loadMoreGallery').addEventListener('click', () => {
-      galleryCount = Math.min(galleryCount + 3, galleryItems.length);
-      renderGallery();
-      gsap.fromTo('#galleryGrid figure', { y: 24, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.06, duration: 0.6 });
-    });
-
-    const lightbox = $('#lightbox');
-    const lightboxImage = $('#lightboxImage');
-    function openLightbox(item) {
-      lightboxImage.src = item.image;
-      lightboxImage.alt = item.title;
-      lightbox.classList.remove('pointer-events-none', 'opacity-0');
-      lightbox.setAttribute('aria-hidden', 'false');
-      gsap.fromTo(lightboxImage, { scale: 0.92 }, { scale: 1, duration: 0.45, ease: 'power3.out' });
-    }
-    function closeLightbox() {
-      lightbox.classList.add('pointer-events-none', 'opacity-0');
-      lightbox.setAttribute('aria-hidden', 'true');
-    }
-    function bindGalleryLightbox() {
-      $$('.gallery-item').forEach((card) => card.addEventListener('click', () => openLightbox(galleryItems[card.dataset.index])));
-    }
-    bindGalleryLightbox();
-    lightbox.addEventListener('click', (event) => {
-      if (event.target === lightbox || event.target.closest('[data-close-lightbox]')) closeLightbox();
-    });
-
-    let touchStartX = 0;
-    lightbox.addEventListener('touchstart', (event) => { touchStartX = event.changedTouches[0].clientX; }, { passive: true });
-    lightbox.addEventListener('touchend', (event) => {
-      if (Math.abs(event.changedTouches[0].clientX - touchStartX) > 50) closeLightbox();
-    }, { passive: true });
-
-    const testimonialTrack = $('#testimonialTrack');
-    testimonialTrack.innerHTML = [...testimonials, ...testimonials].map((item) => `
-      <article class="min-w-[320px] flex-1 rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-xl shadow-black/15 transition hover:-translate-y-2 hover:scale-[1.01]">
-        <div class="mb-6 flex gap-1">${Array.from({ length: 5 }).map(() => `<span class="relative inline-block h-5 w-5 overflow-hidden"><span class="text-white/15">★</span><span class="star-fill absolute inset-0 text-saffron">★</span></span>`).join('')}</div>
-        <p class="text-lg leading-8 text-white/70">“${item.quote}”</p>
-        <div class="mt-8">
-          <p class="font-semibold text-white">${item.name}</p>
-          <p class="text-sm text-white/45">${item.title}</p>
-        </div>
-      </article>
-    `).join('');
-
-    gsap.to('#testimonialTrack', {
-      xPercent: -50,
-      ease: 'none',
-      duration: 28,
-      repeat: -1
-    });
-
-    const calendar = $('#calendar');
-    const selectedDateInput = $('#selectedDate');
-    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const today = new Date();
-    let monthOffset = 0;
-    let selectedDate = null;
-
-    function formatDate(date) {
-      return `${date.getDate()} ${monthNames[date.getMonth()]} ${date.getFullYear()}`;
-    }
-
-    function renderCalendar() {
-      const current = new Date(today.getFullYear(), today.getMonth() + monthOffset, 1);
-      const month = current.getMonth();
-      const year = current.getFullYear();
-      const firstDay = new Date(year, month, 1).getDay();
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
-      const cells = [];
-      for (let i = 0; i < firstDay; i += 1) cells.push('<span></span>');
-      for (let day = 1; day <= daysInMonth; day += 1) {
-        const date = new Date(year, month, day);
-        const disabled = date < new Date(today.getFullYear(), today.getMonth(), today.getDate());
-        const isSelected = selectedDate && formatDate(date) === formatDate(selectedDate);
-        cells.push(`<button class="calendar-day rounded-2xl border px-3 py-4 text-sm transition ${disabled ? 'cursor-not-allowed border-white/5 text-white/20' : isSelected ? 'border-saffron/40 bg-saffron/10 text-white' : 'border-white/10 bg-white/5 text-white/75 hover:border-cyanlux/40 hover:bg-white/10'}" data-date="${date.toISOString()}" ${disabled ? 'disabled' : ''}>${day}</button>`);
-      }
-      calendar.innerHTML = `
-        <div class="flex items-center justify-between">
-          <button class="calendar-nav rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70" data-dir="-1">Prev</button>
-          <p class="font-display text-2xl text-white">${monthNames[month]} ${year}</p>
-          <button class="calendar-nav rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70" data-dir="1">Next</button>
-        </div>
-        <div class="mt-6 grid grid-cols-7 gap-2 text-center text-xs uppercase tracking-[0.25em] text-white/35">
-          <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
-        </div>
-        <div class="mt-4 grid grid-cols-7 gap-2">${cells.join('')}</div>
-      `;
-      $$('.calendar-nav', calendar).forEach((button) => button.addEventListener('click', () => {
-        monthOffset += Number(button.dataset.dir);
-        renderCalendar();
-        gsap.fromTo('#calendar .calendar-day', { y: 16, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.015, duration: 0.35 });
-      }));
-      $$('.calendar-day', calendar).forEach((button) => button.addEventListener('click', () => {
-        selectedDate = new Date(button.dataset.date);
-        selectedDateInput.value = formatDate(selectedDate);
-        renderCalendar();
-        populateSlots();
-      }));
-    }
-    renderCalendar();
-
-    const timeSlots = $('#timeSlots');
-    const slotData = ['6:30 PM', '7:00 PM', '7:30 PM', '8:00 PM', '8:45 PM', '9:15 PM', '10:00 PM', '10:30 PM'];
-    let activeSlot = '';
-    function populateSlots() {
-      timeSlots.innerHTML = slotData.map((slot) => `<button type="button" class="slot rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/75 transition ${activeSlot === slot ? 'active' : ''}">${slot}</button>`).join('');
-      $$('.slot', timeSlots).forEach((button) => button.addEventListener('click', () => {
-        activeSlot = button.textContent;
-        populateSlots();
-      }));
-      gsap.fromTo('#timeSlots .slot', { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, stagger: 0.03 });
-    }
-    populateSlots();
-
-    const successModal = $('#successModal');
-    function openSuccessModal() {
-      successModal.classList.remove('pointer-events-none', 'opacity-0');
-      successModal.setAttribute('aria-hidden', 'false');
-      gsap.fromTo(successModal.firstElementChild, { scale: 0.92, y: 20 }, { scale: 1, y: 0, duration: 0.45, ease: 'power3.out' });
-      confettiBurst();
-    }
-    function closeSuccessModal() {
-      successModal.classList.add('pointer-events-none', 'opacity-0');
-      successModal.setAttribute('aria-hidden', 'true');
-    }
-    successModal.addEventListener('click', (event) => {
-      if (event.target === successModal || event.target.closest('[data-close-success]')) closeSuccessModal();
-    });
-
-    function confettiBurst() {
-      const colors = ['#e7b04b', '#7ce7e9', '#ffffff', '#8b1e3f'];
-      for (let i = 0; i < 40; i += 1) {
-        const piece = document.createElement('span');
-        piece.className = 'fixed left-1/2 top-1/2 z-[81] h-2 w-2 rounded-sm';
-        piece.style.background = colors[i % colors.length];
-        document.body.appendChild(piece);
-        gsap.fromTo(piece, { x: 0, y: 0, opacity: 1, scale: 1 }, {
-          x: gsap.utils.random(-260, 260),
-          y: gsap.utils.random(-260, 260),
-          rotation: gsap.utils.random(-180, 180),
-          scale: 0,
-          opacity: 0,
-          duration: 1.4,
-          ease: 'power3.out',
-          onComplete: () => piece.remove()
-        });
-      }
-    }
-
-    $('#reservationForm').addEventListener('submit', (event) => {
-      event.preventDefault();
-      if (!selectedDateInput.value || !activeSlot) {
-        alert('Please choose a date and available time slot.');
+    document.getElementById('runModuleBtn').addEventListener('click', () => {
+      const module = document.getElementById('moduleSelect').value;
+      const prompt = document.getElementById('promptInput').value.trim();
+      if (!prompt) {
+        outputBox.textContent = 'Please add input before running module.';
         return;
       }
-      openSuccessModal();
-      event.target.reset();
-      activeSlot = '';
-      populateSlots();
-      selectedDate = null;
-      selectedDateInput.value = '';
-      renderCalendar();
+
+      outputBox.textContent = 'Processing...';
+      setTimeout(() => {
+        const result = `${module} Result:\n\n- Summary: High-potential lead workflow generated.\n- Suggested next step: personalize outreach with 2 follow-ups.\n- Compliance note: Validate claims before sending.\n\nDraft Output:\n${prompt.slice(0, 140)} ...`;
+        outputBox.textContent = result;
+        state.creditsUsed = Math.min(state.creditsUsed + 12, 100);
+        updateUsage();
+        appendHistory(module, prompt, result);
+      }, 650);
     });
 
-    const menuToggle = $('#menuToggle');
-    const menuClose = $('#menuClose');
-    const mobileMenu = $('#mobileMenu');
-    function toggleMobileMenu(force) {
-      const open = typeof force === 'boolean' ? force : mobileMenu.classList.contains('translate-x-full');
-      mobileMenu.classList.toggle('translate-x-full', !open);
-      mobileMenu.classList.toggle('opacity-0', !open);
-      mobileMenu.classList.toggle('pointer-events-none', !open);
-      document.body.classList.toggle('menu-open', open);
-      menuToggle.setAttribute('aria-expanded', String(open));
-      mobileMenu.setAttribute('aria-hidden', String(!open));
-      if (open) {
-        gsap.fromTo('.mobile-link', { x: 36, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.08, duration: 0.45, ease: 'power3.out' });
+    document.querySelectorAll('.tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    document.getElementById('submitTxnBtn').addEventListener('click', () => {
+      const txn = document.getElementById('txnIdInput').value.trim();
+      if (!txn) {
+        paymentStatus.textContent = 'Status: Add transaction ID first';
+        return;
       }
-    }
-    menuToggle.addEventListener('click', () => toggleMobileMenu(true));
-    menuClose.addEventListener('click', () => toggleMobileMenu(false));
-    $$('.mobile-link').forEach((link) => link.addEventListener('click', () => toggleMobileMenu(false)));
-
-    $$('.nav-link').forEach((link) => {
-      link.classList.add('relative', 'after:absolute', 'after:left-0', 'after:-bottom-2', 'after:h-px', 'after:w-0', 'after:bg-saffron', 'after:transition-all', 'hover:after:w-full', 'hover:text-white', 'hover:drop-shadow-[0_0_12px_rgba(231,176,75,0.55)]');
+      state.pendingTxn = txn;
+      paymentStatus.textContent = `Status: Submitted (${txn})`; 
+      paymentStatus.style.color = '#ffd98a';
+      document.getElementById('adminState').textContent = `Pending transaction waiting approval: ${txn}`;
     });
 
-    gsap.timeline({ defaults: { ease: 'power3.out' } })
-      .from('.hero-kicker', { y: 24, opacity: 0, duration: 0.7, delay: 0.35 })
-      .to('.hero-title .split-line span', { y: 0, stagger: 0.035, duration: 1 }, '-=0.3')
-      .from('.hero-copy, #heroCta', { y: 24, opacity: 0, stagger: 0.15, duration: 0.8 }, '-=0.45')
-      .from('.hero-layer', { y: 28, opacity: 0, stagger: 0.12, duration: 0.8 }, '-=0.5');
-
-    gsap.to('.hero-layer', {
-      yPercent: -12,
-      ease: 'none',
-      scrollTrigger: { trigger: '#home', start: 'top top', end: 'bottom top', scrub: true }
-    });
-
-    $$('.reveal-line').forEach((line) => {
-      gsap.to($$('.split-line span', line), {
-        y: 0,
-        stagger: 0.02,
-        duration: 0.7,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: line, start: 'top 88%' }
-      });
-    });
-
-    gsap.to('.chef-photo', {
-      yPercent: -8,
-      ease: 'none',
-      scrollTrigger: { trigger: '.chef-photo', start: 'top bottom', end: 'bottom top', scrub: true }
-    });
-
-    gsap.to('.timeline-line', {
-      scaleY: 1,
-      duration: 1.2,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: '.timeline-line', start: 'top 80%' }
-    });
-
-    ['#menuGrid .menu-card', '#galleryGrid figure', '#experiences article', '#reservations .glass', '#testimonials article', '#contact .glass'].forEach((selector) => {
-      ScrollTrigger.batch(selector, {
-        start: 'top 86%',
-        onEnter: (elements) => gsap.fromTo(elements, { y: 30, opacity: 0, scale: 0.98 }, { y: 0, opacity: 1, scale: 1, stagger: 0.12, duration: 0.8, ease: 'power3.out', overwrite: true })
-      });
-    });
-
-    gsap.fromTo('.star-fill', { scaleX: 0 }, {
-      scaleX: 1,
-      duration: 0.9,
-      stagger: 0.08,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: '#testimonials', start: 'top 75%' }
-    });
-
-    const spiceCanvas = $('#spiceCanvas');
-    const spiceCtx = spiceCanvas.getContext('2d');
-    const loaderCanvas = $('#loaderCanvas');
-    const loaderCtx = loaderCanvas.getContext('2d');
-
-    function resizeCanvas(canvas) {
-      canvas.width = window.innerWidth * Math.min(window.devicePixelRatio, 2);
-      canvas.height = window.innerHeight * Math.min(window.devicePixelRatio, 2);
-      canvas.style.width = `${window.innerWidth}px`;
-      canvas.style.height = `${window.innerHeight}px`;
-    }
-    [spiceCanvas, loaderCanvas].forEach(resizeCanvas);
-    window.addEventListener('resize', () => {
-      [spiceCanvas, loaderCanvas].forEach(resizeCanvas);
-      moveTabIndicator(tabs.find((tab) => tab.dataset.category === activeCategory) || tabs[0]);
-    });
-
-    function createParticles(total, palette) {
-      return Array.from({ length: total }, () => ({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
-        r: Math.random() * 2.2 + 0.6,
-        vx: (Math.random() - 0.5) * 0.35,
-        vy: (Math.random() - 0.5) * 0.35,
-        color: palette[Math.floor(Math.random() * palette.length)],
-        alpha: Math.random() * 0.6 + 0.15
-      }));
-    }
-
-    let spiceParticles = createParticles(48, ['rgba(231,176,75,0.75)', 'rgba(124,231,233,0.55)', 'rgba(255,255,255,0.18)']);
-    let loaderParticles = createParticles(90, ['rgba(231,176,75,0.85)', 'rgba(255,255,255,0.75)', 'rgba(124,231,233,0.45)']);
-
-    function animateParticles(ctx, particles, drift = 0.25) {
-      if (!ctx) return;
-      ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-      ctx.save();
-      ctx.scale(Math.min(window.devicePixelRatio, 2), Math.min(window.devicePixelRatio, 2));
-      particles.forEach((particle) => {
-        particle.x += particle.vx + drift * 0.04;
-        particle.y += particle.vy - drift * 0.02;
-        if (particle.x > window.innerWidth + 20) particle.x = -20;
-        if (particle.x < -20) particle.x = window.innerWidth + 20;
-        if (particle.y > window.innerHeight + 20) particle.y = -20;
-        if (particle.y < -20) particle.y = window.innerHeight + 20;
-        ctx.beginPath();
-        ctx.fillStyle = particle.color;
-        ctx.globalAlpha = particle.alpha;
-        ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
-        ctx.fill();
-      });
-      ctx.restore();
-    }
-
-    function particleLoop() {
-      animateParticles(spiceCtx, spiceParticles, window.scrollY * 0.01);
-      if (!$('#loader').classList.contains('hidden')) animateParticles(loaderCtx, loaderParticles, 0.15);
-      requestAnimationFrame(particleLoop);
-    }
-    if (!prefersReduced) particleLoop();
-
-    window.addEventListener('load', () => {
-      setTimeout(() => $('#loader').classList.add('hidden'), prefersReduced ? 80 : 1200);
-    });
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        closeMenuModal();
-        closeLightbox();
-        closeSuccessModal();
-        toggleMobileMenu(false);
+    document.getElementById('adminLoginBtn').addEventListener('click', () => {
+      const code = document.getElementById('adminCodeInput').value.trim();
+      if (code === 'stadvix-admin') {
+        state.admin = true;
+        document.getElementById('adminState').textContent = 'Admin mode active. You can approve latest payment.';
+        document.getElementById('approvePaymentBtn').style.display = 'inline-block';
+      } else {
+        document.getElementById('adminState').textContent = 'Invalid admin code.';
       }
     });
 
-    console.log('The Saffron Table – Awwwards level site loaded with GSAP & Lenis ✅');
+    document.getElementById('approvePaymentBtn').addEventListener('click', () => {
+      if (!state.admin || !state.pendingTxn) {
+        paymentStatus.textContent = 'Status: No pending transaction';
+        return;
+      }
+      paymentStatus.textContent = 'Status: Active (manually approved)';
+      paymentStatus.style.color = '#9ff0bf';
+      state.pendingTxn = null;
+    });
+
+    function setCurrency(cur) {
+      state.currency = cur;
+      document.querySelectorAll('#pricing .price').forEach(node => {
+        node.textContent = cur === 'USD' ? node.dataset.usd : node.dataset.inr;
+      });
+      document.getElementById('usdBtn').classList.toggle('active', cur === 'USD');
+      document.getElementById('inrBtn').classList.toggle('active', cur === 'INR');
+    }
+    document.getElementById('usdBtn').addEventListener('click', () => setCurrency('USD'));
+    document.getElementById('inrBtn').addEventListener('click', () => setCurrency('INR'));
+
+    const modal = document.getElementById('loginModal');
+    function openModal() { modal.classList.add('active'); modal.setAttribute('aria-hidden', 'false'); }
+    function closeModal() { modal.classList.remove('active'); modal.setAttribute('aria-hidden', 'true'); }
+
+    ['loginBtn', 'trialBtn', 'heroTrialBtn'].forEach(id => document.getElementById(id).addEventListener('click', openModal));
+    document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+    document.getElementById('loginSubmitBtn').addEventListener('click', () => {
+      const email = document.getElementById('userEmail').value.trim();
+      if (!email) return;
+      localStorage.setItem('stadvix_user', email);
+      closeModal();
+      alert(`Welcome, ${email}. Your trial session is active.`);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    updateUsage();
+    setCurrency('USD');
   </script>
 </body>
 </html>
