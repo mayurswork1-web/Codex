@@ -4,213 +4,337 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stadvix | AI Growth Operating System</title>
-  <meta name="description" content="Stadvix helps teams automate lead generation, outreach, and growth operations with AI modules." />
-  <meta name="theme-color" content="#0a0a0d" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Stadvix is a compliance-first AI growth operating system for lead generation, outreach, conversion, and analytics workflows." />
+  <meta property="og:title" content="Stadvix | AI Growth Operating System" />
+  <meta property="og:description" content="Deploy AI modules for growth operations with clear controls, usage visibility, and scalable execution." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0a0d17" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@500;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #07080d;
-      --bg-soft: #10131f;
-      --card: #121624;
-      --card-2: #181d2f;
-      --text: #f4f6ff;
-      --muted: #a6b1d1;
-      --line: #28314f;
+      --bg: #090d18;
+      --bg-soft: #11182d;
+      --panel: #141d36;
+      --panel-2: #1a2440;
+      --text: #ecf1ff;
+      --muted: #a8b6dd;
+      --line: #2d3a63;
       --accent: #7de68a;
-      --accent-2: #9cf6ff;
-      --danger: #ff6e7f;
-      --warning: #ffcc66;
+      --accent-2: #97e8ff;
+      --gold: #d8b36d;
+      --danger: #ff7488;
+      --warn: #ffd281;
+      --ok: #92f0c1;
+      --shadow: 0 16px 55px rgba(0, 0, 0, 0.42);
+      --radius: 14px;
     }
 
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; font-family: Inter, sans-serif; background: radial-gradient(circle at top right, #1c2340 0%, var(--bg) 40%); color: var(--text); }
+    html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(98, 120, 197, 0.22), transparent 38%),
+        radial-gradient(circle at bottom left, rgba(0, 183, 255, 0.08), transparent 28%),
+        var(--bg);
+      line-height: 1.4;
+    }
     a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
     .container { width: min(1180px, 92%); margin: 0 auto; }
+
+    .btn {
+      border: 1px solid transparent;
+      border-radius: 10px;
+      background: #1f2a4a;
+      color: var(--text);
+      padding: .7rem 1rem;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.07); }
+    .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #09140f; }
+    .btn-outline { background: transparent; border-color: #3b4d82; }
+    .btn-danger { background: transparent; border-color: #7a3b4b; color: #ffb3bf; }
+    .btn-sm { padding: .5rem .75rem; font-size: .85rem; }
 
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 50;
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid #2a3150;
-      background: rgba(7, 8, 13, 0.75);
+      border-bottom: 1px solid #2b3559;
+      background: rgba(9, 13, 24, 0.8);
     }
-    .topbar-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .topbar-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 
     .brand { display: flex; align-items: center; gap: 12px; }
-    .brand h1 { font-family: Cinzel, serif; font-size: 1.1rem; margin: 0; letter-spacing: .5px; }
-    .brand small { color: var(--muted); display: block; font-size: .72rem; }
-
     .logo-mark {
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: linear-gradient(145deg, #261b0f, #0d0a07);
-      border: 1px solid #8e6f3d;
+      background: linear-gradient(145deg, #2e2214, #0e0a07);
+      border: 1px solid #a8864d;
       display: grid;
       place-items: center;
-      box-shadow: 0 0 0 2px rgba(212,171,94,.2), 0 8px 20px rgba(0,0,0,.45);
+      box-shadow: 0 0 0 2px rgba(216, 179, 109, 0.18), 0 8px 20px rgba(0, 0, 0, .4);
+      flex-shrink: 0;
     }
+    .brand h1 { margin: 0; font: 700 1.05rem Cinzel, serif; }
+    .brand small { color: var(--muted); font-size: .72rem; display: block; }
 
-    nav { display: flex; gap: 20px; align-items: center; }
-    nav a { color: var(--muted); font-size: .92rem; }
+    nav { display: flex; align-items: center; gap: 18px; }
+    nav a { color: var(--muted); font-size: .9rem; }
     nav a:hover { color: var(--text); }
 
-    .btn {
-      border: 1px solid transparent;
-      background: #1d243a;
-      color: var(--text);
-      padding: .72rem 1rem;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: 600;
+    .hero { padding: 72px 0 34px; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 28px; align-items: center; }
+    .tag {
+      display: inline-flex;
+      border: 1px solid #3c4d82;
+      border-radius: 999px;
+      color: #bdd1f6;
+      padding: .34rem .72rem;
+      font-size: .75rem;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 6px;
     }
-    .btn:hover { filter: brightness(1.08); }
-    .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #07110c; }
-    .btn-outline { background: transparent; border-color: #3a4670; }
-    .btn-sm { padding: .55rem .8rem; font-size: .85rem; }
-
-    .hero { padding: 70px 0 40px; }
-    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 30px; align-items: center; }
-    .tag { display: inline-flex; gap: 8px; align-items: center; border: 1px solid #38506f; padding: .35rem .7rem; border-radius: 99px; color: #b6c9ea; font-size: .76rem; }
-    .hero h2 { font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.15; margin: 14px 0; }
-    .hero p { color: var(--muted); line-height: 1.65; max-width: 55ch; }
-
-    .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
-    .trust-line { margin-top: 12px; color: #8fa0ca; font-size: .84rem; }
+    .hero h2 { margin: 10px 0; font-size: clamp(2rem, 5vw, 3.35rem); line-height: 1.15; }
+    .hero p { color: var(--muted); max-width: 58ch; }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .trust-line { margin-top: 12px; font-size: .83rem; color: #92a6d4; }
 
     .panel {
       border: 1px solid var(--line);
       border-radius: 16px;
-      background: linear-gradient(180deg, rgba(22,28,47,.95), rgba(16,19,31,.95));
-      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      background: linear-gradient(180deg, rgba(26, 36, 65, .95), rgba(17, 24, 45, .95));
+      box-shadow: var(--shadow);
       overflow: hidden;
     }
-    .panel-head { padding: 13px 14px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
-    .pill { font-size: .75rem; border: 1px solid #36554a; color: #afeec9; padding: .2rem .55rem; border-radius: 999px; }
-    .panel-body { padding: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .metric-card { background: #0f1320; border: 1px solid #273150; border-radius: 12px; padding: 12px; }
-    .metric-card .label { color: #8ea1cf; font-size: .78rem; }
-    .metric-card .value { font-size: 1.35rem; font-weight: 700; margin-top: 4px; }
-    .metric-card .sub { font-size: .75rem; color: #87d9a0; margin-top: 4px; }
+    .panel-head {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      border: 1px solid #356352;
+      color: #b2f5d5;
+      padding: .2rem .55rem;
+      font-size: .74rem;
+    }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: #86efac; box-shadow: 0 0 0 0 rgba(134, 239, 172, .7); animation: pulse 1.8s infinite; }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(134,239,172,.6); }
+      100% { box-shadow: 0 0 0 10px rgba(134,239,172,0); }
+    }
 
-    .section { padding: 60px 0; }
-    .section h3 { font-size: 1.8rem; margin-bottom: 8px; }
-    .section p.lead { color: var(--muted); margin-top: 0; margin-bottom: 24px; }
+    .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 12px; }
+    .metric-card { border: 1px solid #2d3a63; border-radius: 12px; background: #0f162a; padding: 11px; }
+    .metric-card .label { color: #95a9d7; font-size: .78rem; }
+    .metric-card .value { font-size: 1.3rem; font-weight: 800; margin-top: 4px; }
+    .metric-card .sub { font-size: .74rem; color: #91e8bb; margin-top: 4px; }
 
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .section { padding: 56px 0; }
+    .section h3 { margin: 0 0 7px; font-size: clamp(1.45rem, 2.8vw, 1.95rem); }
+    .section .lead { margin: 0 0 22px; color: var(--muted); }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 
     .card {
       border: 1px solid var(--line);
-      border-radius: 14px;
-      background: linear-gradient(180deg, #131a2b, #0f1422);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--panel), var(--bg-soft));
       padding: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.22);
     }
     .card h4 { margin: 0 0 6px; font-size: 1rem; }
-    .card p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.5; }
-    .badge { display: inline-block; margin-top: 10px; font-size: .72rem; color: #9ff0bf; border: 1px solid #2f5d4a; padding: .22rem .55rem; border-radius: 99px; }
-
-    .pricing-toggle { display: inline-flex; border: 1px solid #35416a; border-radius: 999px; padding: 4px; gap: 4px; }
-    .pricing-toggle button { background: transparent; color: var(--muted); border: none; border-radius: 999px; padding: .45rem .75rem; cursor: pointer; font-weight: 600; }
-    .pricing-toggle button.active { background: #28355a; color: var(--text); }
-
-    .price-card { position: relative; }
-    .price { font-size: 2rem; font-weight: 800; margin: 10px 0 2px; }
-    .popular { position: absolute; top: -11px; right: 12px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #06130b; font-size: .7rem; font-weight: 800; padding: .3rem .55rem; border-radius: 99px; }
-    .price-list { margin: 12px 0 16px; padding-left: 18px; color: var(--muted); }
-    .price-list li { margin-bottom: 8px; }
-
-    .dashboard {
-      display: none;
-      margin-top: 24px;
-      border-top: 1px solid var(--line);
-      padding-top: 18px;
-    }
-    .dashboard.active { display: block; }
-    .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
-    .tab { border: 1px solid #3b4b7c; background: #1a2238; color: var(--muted); padding: .45rem .75rem; border-radius: 9px; cursor: pointer; }
-    .tab.active { color: var(--text); border-color: #7aa6ff; }
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
-
-    .workspace {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-    textarea, input, select {
-      width: 100%;
-      border: 1px solid #33416a;
-      border-radius: 10px;
-      background: #10182b;
-      color: var(--text);
-      padding: .75rem;
-      font-family: inherit;
-    }
-    .run-box { min-height: 180px; border: 1px solid #33416a; border-radius: 10px; padding: 12px; background: #10182b; color: #d8e4ff; white-space: pre-wrap; }
-
-    .usage-bar-wrap { margin-top: 8px; }
-    .usage-bar { height: 10px; border-radius: 10px; background: #242f4f; overflow: hidden; }
-    .usage-bar > div { height: 100%; background: linear-gradient(90deg, #5ae09e, #8ce2ff); width: 0; }
-
-    .qr-box { display: grid; gap: 12px; }
-    .qr-box img { max-width: 260px; width: 100%; border-radius: 10px; border: 1px solid #3a4a78; }
+    .card p { margin: 0; font-size: .9rem; color: var(--muted); line-height: 1.5; }
     .status {
       display: inline-block;
-      font-size: .78rem;
-      padding: .2rem .55rem;
+      margin-top: 10px;
       border-radius: 999px;
-      border: 1px solid #5d4f2e;
-      color: #ffd98a;
+      padding: .2rem .55rem;
+      border: 1px solid #34604c;
+      color: #9df0be;
+      font-size: .72rem;
+      font-weight: 600;
+    }
+    .status.beta { border-color: #6c5730; color: #ffdb95; }
+    .status.soon { border-color: #4b5173; color: #b8c2e9; }
+
+    .pricing-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .pricing-toggle { display: inline-flex; border: 1px solid #3b4d82; border-radius: 999px; padding: 4px; gap: 5px; }
+    .pricing-toggle button { border: none; background: transparent; color: var(--muted); border-radius: 999px; padding: .45rem .8rem; cursor: pointer; font-weight: 700; }
+    .pricing-toggle button.active { background: #2f3d66; color: var(--text); }
+
+    .price-card { position: relative; }
+    .popular {
+      position: absolute;
+      top: -12px;
+      right: 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #08130f;
+      font-size: .68rem;
+      font-weight: 800;
+      padding: .28rem .54rem;
+      letter-spacing: .25px;
+    }
+    .price { font-size: 2rem; font-weight: 800; margin: 8px 0 2px; }
+    .price-note { color: var(--muted); font-size: .82rem; }
+    .price-list { color: var(--muted); margin: 12px 0 14px; padding-left: 18px; }
+    .price-list li { margin-bottom: 6px; }
+
+    .dashboard-wrap {
+      border-top: 1px solid var(--line);
+      margin-top: 12px;
+      padding-top: 16px;
+    }
+    .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .tab {
+      border: 1px solid #3a4c81;
+      background: #1b2747;
+      border-radius: 8px;
+      color: var(--muted);
+      padding: .45rem .75rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-family: inherit;
+    }
+    .tab.active { color: var(--text); border-color: #8fb8ff; }
+
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; }
+
+    .workspace { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    label { font-size: .82rem; color: #b6c3e8; display: block; margin-bottom: 4px; }
+    input, textarea, select {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #334676;
+      background: #101a32;
+      color: var(--text);
+      padding: .7rem;
+      font-family: inherit;
+    }
+    textarea { resize: vertical; }
+    .output-box {
+      min-height: 188px;
+      border-radius: 10px;
+      border: 1px solid #334676;
+      background: #101a32;
+      padding: 12px;
+      white-space: pre-wrap;
+      color: #dce6ff;
+      font-size: .92rem;
     }
 
+    .usage-wrap { margin-top: 10px; }
+    .usage-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 4px; color: var(--muted); font-size: .82rem; }
+    .usage-bar { height: 10px; border-radius: 10px; background: #293960; overflow: hidden; }
+    .usage-fill { height: 100%; width: 0; background: linear-gradient(90deg, #62e39f, #98e8ff); }
+
+    .history-item { border: 1px solid #324473; border-radius: 10px; padding: 10px; margin-bottom: 10px; background: #101a32; }
+    .history-item small { color: #9db2e0; }
+
+    .template-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+    .template-btn { text-align: left; }
+
+    .qr-grid { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; }
+    .qr-image { width: 220px; border-radius: 12px; border: 1px solid #3a4d81; }
+
+    .status-pill {
+      border-radius: 999px;
+      font-size: .78rem;
+      border: 1px solid #705d35;
+      color: var(--warn);
+      display: inline-block;
+      padding: .2rem .55rem;
+      margin-bottom: 8px;
+    }
+    .status-pill.ok { border-color: #356a50; color: var(--ok); }
+    .status-pill.bad { border-color: #7a4250; color: #ffb5c2; }
+
+    .compliance-list { margin: 0; padding-left: 18px; color: var(--muted); }
+    .compliance-list li { margin-bottom: 8px; }
+
     footer {
-      padding: 38px 0;
       border-top: 1px solid var(--line);
-      color: #8da0cd;
+      padding: 32px 0;
+      margin-top: 8px;
+      color: #8ea2d1;
       font-size: .85rem;
     }
 
     .modal {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,.6);
+      background: rgba(0,0,0,.62);
       display: none;
       place-items: center;
-      z-index: 50;
+      z-index: 80;
+      padding: 16px;
     }
     .modal.active { display: grid; }
     .modal-card {
-      width: min(440px, 90%);
-      background: #121b30;
-      border: 1px solid #33416a;
+      width: min(430px, 100%);
       border-radius: 14px;
-      padding: 18px;
+      border: 1px solid #364a7d;
+      background: #141e38;
+      padding: 16px;
+      box-shadow: var(--shadow);
     }
     .modal-card h4 { margin-top: 0; }
 
-    @media (max-width: 980px) {
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+      padding: 0;
+    }
+
+    @media (max-width: 1024px) {
       .hero-grid, .workspace { grid-template-columns: 1fr; }
       .grid-4 { grid-template-columns: repeat(2, 1fr); }
-      nav a { display: none; }
+      .template-grid { grid-template-columns: repeat(2, 1fr); }
+      .qr-grid { grid-template-columns: 1fr; }
     }
-    @media (max-width: 640px) {
-      .grid-3, .grid-4 { grid-template-columns: 1fr; }
-      .topbar-inner { height: auto; padding: 12px 0; align-items: flex-start; gap: 12px; flex-direction: column; }
+
+    @media (max-width: 760px) {
+      nav a { display: none; }
+      .grid-3, .grid-2, .grid-4, .template-grid { grid-template-columns: 1fr; }
+      .topbar-inner { min-height: 64px; }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
+  <header class="topbar" role="banner">
     <div class="container topbar-inner">
       <div class="brand">
         <div class="logo-mark" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="11" stroke="#d4ab5e" stroke-width="1.2"></circle>
-            <path d="M6 14c4-1 6-4 8-8 2 4 3 8 4 12-4-2-8-2-12-4z" fill="#d4ab5e"/>
+            <circle cx="12" cy="12" r="11" stroke="#d8b36d" stroke-width="1.2" />
+            <path d="M6 14c4-1 6-4 8-8 2 4 3 8 4 12-4-2-8-2-12-4z" fill="#d8b36d"/>
           </svg>
         </div>
         <div>
@@ -218,7 +342,8 @@
           <small>AI Growth Operating System</small>
         </div>
       </div>
-      <nav>
+
+      <nav aria-label="Primary navigation">
         <a href="#modules">Modules</a>
         <a href="#pricing">Pricing</a>
         <a href="#dashboard">Dashboard</a>
@@ -230,79 +355,85 @@
   </header>
 
   <main>
-    <section class="hero container">
+    <section class="hero container" aria-labelledby="hero-title">
       <div class="hero-grid">
         <div>
-          <span class="tag">⚡ 14-Day Free Trial • USD Default • INR Toggle</span>
-          <h2>Build Your AI Revenue Team in Minutes.</h2>
+          <span class="tag">⚡ 14-Day Trial • USD Default • INR Toggle • Compliance-first</span>
+          <h2 id="hero-title">Build Your AI Revenue Team in Minutes.</h2>
           <p>
-            Stadvix helps you automate lead generation, outreach, qualification, and growth operations using specialized AI modules.
-            Results vary by strategy and execution quality. No outcomes are guaranteed.
+            Stadvix automates lead generation, outreach, qualification, and growth operations with specialized AI modules.
+            This platform provides tools and workflow support. Results vary by strategy, market, and execution quality.
           </p>
           <div class="hero-cta">
             <button class="btn btn-primary" id="heroTrialBtn">Start Free Trial</button>
-            <button class="btn btn-outline">See Live Demo</button>
+            <button class="btn btn-outline" id="demoBtn">See Demo Flow</button>
           </div>
-          <div class="trust-line">No lock-in • Compliance-first messaging • Owner-controlled workflow</div>
+          <div class="trust-line">No lock-in • No guaranteed outcomes • Owner-controlled approvals</div>
         </div>
-        <div class="panel" aria-label="Live dashboard preview">
+
+        <div class="panel" aria-label="Mission control preview">
           <div class="panel-head">
             <strong>Mission Control</strong>
-            <span class="pill">AI Active</span>
+            <span class="pill"><span class="pulse" aria-hidden="true"></span> AI Active</span>
           </div>
-          <div class="panel-body">
+          <div class="metrics">
             <div class="metric-card">
               <div class="label">Agent Runs (Today)</div>
-              <div class="value">146</div>
-              <div class="sub">+12% vs yesterday</div>
+              <div class="value" id="statRuns">146</div>
+              <div class="sub">Live simulation</div>
             </div>
             <div class="metric-card">
               <div class="label">Lead Tasks Completed</div>
-              <div class="value">89</div>
-              <div class="sub">High-confidence 63</div>
+              <div class="value" id="statLeads">89</div>
+              <div class="sub">Quality-filtered</div>
             </div>
             <div class="metric-card">
-              <div class="label">Response Time</div>
+              <div class="label">Avg Response Time</div>
               <div class="value">1.8s</div>
               <div class="sub">p95 stable</div>
             </div>
             <div class="metric-card">
-              <div class="label">System Status</div>
+              <div class="label">System Health</div>
               <div class="value">99.9%</div>
-              <div class="sub">Uptime target</div>
+              <div class="sub">Target uptime</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section container" id="modules">
-      <h3>Core AI Modules (MVP)</h3>
-      <p class="lead">Start with high-impact lead generation and conversion automations.</p>
+    <section class="section container" id="modules" aria-labelledby="modules-title">
+      <h3 id="modules-title">Core AI Modules (MVP)</h3>
+      <p class="lead">Lead-gen-first modules for one-week submission scope.</p>
       <div class="grid-4">
-        <article class="card"><h4>ICP Finder AI</h4><p>Define ideal customer profiles from seed input and market context.</p><span class="badge">Live</span></article>
-        <article class="card"><h4>Lead Scoring AI</h4><p>Scores prospects by fit, intent, and conversion probability.</p><span class="badge">Live</span></article>
-        <article class="card"><h4>Cold Email Writer</h4><p>Generates personalized outreach drafts with multi-angle variants.</p><span class="badge">Live</span></article>
-        <article class="card"><h4>Follow-up Sequencer</h4><p>Creates structured follow-up sequences with timing suggestions.</p><span class="badge">Live</span></article>
-        <article class="card"><h4>Proposal Draft AI</h4><p>Builds concise offer-ready proposals for warm leads.</p><span class="badge">Beta</span></article>
-        <article class="card"><h4>ROI Reporter</h4><p>Summarizes campaign outputs into simple decision dashboards.</p><span class="badge">Beta</span></article>
-        <article class="card"><h4>CRM Auto Updater</h4><p>Formats notes and pushes clean CRM-ready records.</p><span class="badge">Coming Soon</span></article>
-        <article class="card"><h4>Sales Forecast Agent</h4><p>Projects next-cycle conversions from current pipeline quality.</p><span class="badge">Coming Soon</span></article>
+        <article class="card"><h4>ICP Finder AI</h4><p>Build target persona profiles from market + offer inputs.</p><span class="status">Live</span></article>
+        <article class="card"><h4>Lead Scoring AI</h4><p>Rank prospects by fit, intent signals, and conversion readiness.</p><span class="status">Live</span></article>
+        <article class="card"><h4>Cold Email Writer</h4><p>Create personalized outreach drafts with 3 tone variants.</p><span class="status">Live</span></article>
+        <article class="card"><h4>Follow-up Sequencer</h4><p>Generate a 5-step follow-up plan with timing suggestions.</p><span class="status">Live</span></article>
+        <article class="card"><h4>Proposal Draft AI</h4><p>Create concise proposal drafts with scope + value framing.</p><span class="status beta">Beta</span></article>
+        <article class="card"><h4>ROI Reporter</h4><p>Convert campaign activity into plain-language summaries.</p><span class="status beta">Beta</span></article>
+        <article class="card"><h4>CRM Auto Updater</h4><p>Normalize notes into CRM-ready fields and stage updates.</p><span class="status soon">Coming Soon</span></article>
+        <article class="card"><h4>Sales Forecast Agent</h4><p>Project closing ranges from weighted pipeline quality.</p><span class="status soon">Coming Soon</span></article>
       </div>
     </section>
 
-    <section class="section container" id="pricing">
-      <h3>Pricing</h3>
-      <p class="lead">Default in USD. Users can switch to INR display anytime.</p>
-      <div class="pricing-toggle" role="group" aria-label="Currency toggle">
-        <button id="usdBtn" class="active">USD</button>
-        <button id="inrBtn">INR</button>
+    <section class="section container" id="pricing" aria-labelledby="pricing-title">
+      <div class="pricing-head">
+        <div>
+          <h3 id="pricing-title">Pricing</h3>
+          <p class="lead">Default currency is USD. Users can switch display to INR.</p>
+        </div>
+        <div class="pricing-toggle" role="group" aria-label="Currency toggle">
+          <button id="usdBtn" class="active">USD</button>
+          <button id="inrBtn">INR</button>
+        </div>
       </div>
-      <div class="grid-3" style="margin-top:14px;">
+
+      <div class="grid-3">
         <article class="card price-card">
           <h4>Launch</h4>
           <div class="price" data-usd="$29" data-inr="₹1,999">$29</div>
-          <small>/month</small>
+          <div class="price-note">/month</div>
           <ul class="price-list">
             <li>5 active agents</li>
             <li>Core lead-gen modules</li>
@@ -310,22 +441,24 @@
           </ul>
           <button class="btn btn-outline">Start Free Trial</button>
         </article>
+
         <article class="card price-card">
           <span class="popular">MOST POPULAR</span>
           <h4>Scale</h4>
           <div class="price" data-usd="$79" data-inr="₹6,499">$79</div>
-          <small>/month</small>
+          <div class="price-note">/month</div>
           <ul class="price-list">
             <li>20 active agents</li>
-            <li>All current modules</li>
+            <li>All current MVP modules</li>
             <li>Priority support</li>
           </ul>
           <button class="btn btn-primary">Start Free Trial</button>
         </article>
+
         <article class="card price-card">
           <h4>Command</h4>
           <div class="price" data-usd="$299" data-inr="₹24,999">$299</div>
-          <small>/month</small>
+          <div class="price-note">/month</div>
           <ul class="price-list">
             <li>Unlimited agents</li>
             <li>API access</li>
@@ -336,22 +469,23 @@
       </div>
     </section>
 
-    <section class="section container" id="dashboard">
-      <h3>User Dashboard (Inside App)</h3>
-      <p class="lead">Workspace, history, usage, and temporary QR billing flow are included for submission MVP.</p>
+    <section class="section container" id="dashboard" aria-labelledby="dashboard-title">
+      <h3 id="dashboard-title">Dashboard (Submission MVP)</h3>
+      <p class="lead">Workspace, history, templates, billing (QR interim), and admin review are included.</p>
 
-      <div class="dashboard active" id="appDashboard">
-        <div class="tabs">
-          <button class="tab active" data-tab="workspaceTab">Workspace</button>
-          <button class="tab" data-tab="historyTab">History</button>
-          <button class="tab" data-tab="billingTab">Billing</button>
-          <button class="tab" data-tab="adminTab">Admin</button>
+      <div class="dashboard-wrap">
+        <div class="tabs" role="tablist" aria-label="Dashboard sections">
+          <button class="tab active" data-tab="workspacePane" role="tab" aria-selected="true">Workspace</button>
+          <button class="tab" data-tab="templatesPane" role="tab" aria-selected="false">Templates</button>
+          <button class="tab" data-tab="historyPane" role="tab" aria-selected="false">History</button>
+          <button class="tab" data-tab="billingPane" role="tab" aria-selected="false">Billing</button>
+          <button class="tab" data-tab="adminPane" role="tab" aria-selected="false">Admin</button>
         </div>
 
-        <div id="workspaceTab" class="tab-content active card">
+        <section id="workspacePane" class="tab-pane active card" role="tabpanel">
           <div class="workspace">
             <div>
-              <label for="moduleSelect">Module</label>
+              <label for="moduleSelect">Choose Module</label>
               <select id="moduleSelect">
                 <option>ICP Finder AI</option>
                 <option>Lead Scoring AI</option>
@@ -359,57 +493,116 @@
                 <option>Follow-up Sequencer</option>
                 <option>Proposal Draft AI</option>
               </select>
-              <label for="promptInput" style="margin-top:10px; display:block;">Prompt / Input</label>
-              <textarea id="promptInput" rows="8" placeholder="Example: Generate a personalized cold email for B2B SaaS founder in India."></textarea>
-              <button class="btn btn-primary" id="runModuleBtn" style="margin-top:10px;">Run Module</button>
+
+              <label for="promptInput" style="margin-top:8px;">Input Prompt</label>
+              <textarea id="promptInput" rows="8" placeholder="Example: Create a 3-step outbound flow for SaaS founders in India."></textarea>
+              <div style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;">
+                <button class="btn btn-primary" id="runBtn">Run Module</button>
+                <button class="btn btn-outline" id="clearBtn">Clear</button>
+              </div>
             </div>
+
             <div>
               <strong>Output Preview</strong>
-              <div class="run-box" id="outputBox">Your AI output will appear here...</div>
-              <div class="usage-bar-wrap">
-                <small id="usageText">Usage: 0 / 100 credits</small>
-                <div class="usage-bar"><div id="usageFill"></div></div>
+              <div class="output-box" id="outputBox">Your generated output will appear here...</div>
+              <div class="usage-wrap">
+                <div class="usage-top"><span id="usageLabel">Usage: 0 / 100 credits</span><span id="usagePct">0%</span></div>
+                <div class="usage-bar"><div class="usage-fill" id="usageFill"></div></div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div id="historyTab" class="tab-content card">
+        <section id="templatesPane" class="tab-pane card" role="tabpanel">
+          <h4>Quick Start Templates</h4>
+          <p class="lead" style="margin-bottom:10px;">Use one click to prefill prompt examples for faster onboarding.</p>
+          <div class="template-grid">
+            <button class="btn btn-outline template-btn" data-template="Generate 20 B2B SaaS founder leads in Pune with a lead score rubric.">B2B Lead Pack</button>
+            <button class="btn btn-outline template-btn" data-template="Write a 4-email outreach sequence for agencies targeting ecommerce brands.">Outreach Sequence</button>
+            <button class="btn btn-outline template-btn" data-template="Create a concise proposal for social media growth service with pricing tiers.">Proposal Draft</button>
+            <button class="btn btn-outline template-btn" data-template="Summarize campaign performance and suggest 3 optimization actions.">ROI Summary</button>
+            <button class="btn btn-outline template-btn" data-template="Generate objection handling replies for pricing and trust concerns.">Objection Replies</button>
+            <button class="btn btn-outline template-btn" data-template="Create follow-up schedule for warm leads over 10 days.">Follow-up Plan</button>
+          </div>
+        </section>
+
+        <section id="historyPane" class="tab-pane card" role="tabpanel">
           <h4>Run History</h4>
-          <div id="historyList" style="color:var(--muted);">No runs yet. Execute a module to see history.</div>
-        </div>
+          <p class="lead" style="margin-bottom:8px;">Saved in browser local storage for MVP demo.</p>
+          <div id="historyList" style="color:var(--muted);">No runs yet.</div>
+        </section>
 
-        <div id="billingTab" class="tab-content card">
+        <section id="billingPane" class="tab-pane card" role="tabpanel">
           <h4>Billing (Temporary QR Mode)</h4>
-          <p style="color:var(--muted);">Until gateway integration is live, users can pay via QR and submit transaction ID for manual activation.</p>
-          <div class="qr-box">
-            <img src="https://via.placeholder.com/320x320.png?text=Replace+with+Your+QR" id="qrImage" alt="Payment QR code" />
-            <span class="status" id="paymentStatus">Status: Pending Verification</span>
-            <input id="txnIdInput" placeholder="Enter UPI transaction/reference ID" />
-            <button class="btn btn-outline" id="submitTxnBtn">Submit Payment Proof</button>
-          </div>
-        </div>
+          <p class="lead" style="margin-bottom:10px;">For submission only. Replace with Stripe/Razorpay to automate activation.</p>
 
-        <div id="adminTab" class="tab-content card">
-          <h4>Admin Quick Panel</h4>
-          <p style="color:var(--muted);">Use admin mode in MVP to approve submitted transaction IDs.</p>
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
-            <input id="adminCodeInput" placeholder="Enter admin code" style="max-width:260px;" />
-            <button class="btn btn-outline" id="adminLoginBtn">Enable Admin</button>
+          <div class="qr-grid">
+            <div>
+              <img class="qr-image" id="qrImage" src="https://via.placeholder.com/360x360.png?text=Upload+Your+Real+QR" alt="Payment QR code placeholder" />
+            </div>
+            <div>
+              <span class="status-pill" id="paymentStatus">Status: Pending Verification</span>
+              <label for="txnInput">UPI Transaction / Reference ID</label>
+              <input id="txnInput" placeholder="Enter transaction ID" />
+              <div style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;">
+                <button class="btn btn-outline" id="submitTxnBtn">Submit Proof</button>
+                <button class="btn btn-danger" id="resetBillingBtn">Reset Billing Status</button>
+              </div>
+              <p style="color:var(--muted); font-size:.82rem; margin-top:10px;">
+                Note: Do not share personal account numbers publicly. Use secure payment gateway in production.
+              </p>
+            </div>
           </div>
-          <div id="adminState" style="color:var(--muted);">Admin mode is locked.</div>
-          <button class="btn btn-primary" id="approvePaymentBtn" style="margin-top:10px; display:none;">Approve Latest Payment</button>
-        </div>
+        </section>
+
+        <section id="adminPane" class="tab-pane card" role="tabpanel">
+          <h4>Admin Verification Panel (MVP)</h4>
+          <p class="lead" style="margin-bottom:10px;">Use configurable code to simulate payment approval for demo.</p>
+          <div class="grid-2">
+            <div>
+              <label for="adminCodeInput">Admin Code</label>
+              <input id="adminCodeInput" placeholder="Default: stadvix-admin" />
+              <div style="display:flex; gap:8px; margin-top:10px;">
+                <button class="btn btn-outline" id="adminEnableBtn">Enable Admin</button>
+                <button class="btn btn-danger" id="adminDisableBtn">Disable</button>
+              </div>
+            </div>
+            <div>
+              <strong>Admin State</strong>
+              <div id="adminState" style="margin-top:6px; color:var(--muted);">Admin mode is locked.</div>
+              <button class="btn btn-primary" id="approveBtn" style="margin-top:10px; display:none;">Approve Latest Payment</button>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
 
-    <section class="section container" id="security">
-      <h3>Security & Compliance Notes</h3>
+    <section class="section container" id="security" aria-labelledby="security-title">
+      <h3 id="security-title">Security & Compliance</h3>
       <div class="grid-3">
-        <article class="card"><h4>Owner-controlled Access</h4><p>Role-based controls and auditable actions are required in production mode.</p></article>
-        <article class="card"><h4>No Guaranteed Results</h4><p>Stadvix provides AI workflow tools; business outcomes vary by execution.</p></article>
-        <article class="card"><h4>Payment Safety</h4><p>Use Stripe/Razorpay for automated subscriptions after submission phase.</p></article>
+        <article class="card">
+          <h4>Owner-Controlled Permissions</h4>
+          <p>Sensitive actions should use approval gates and role-based access in production builds.</p>
+        </article>
+        <article class="card">
+          <h4>No Guaranteed Results</h4>
+          <p>This product provides automation tooling only. Outcomes vary by strategy, market, and execution.</p>
+        </article>
+        <article class="card">
+          <h4>Payment Safety</h4>
+          <p>Use Stripe/Razorpay webhooks for real subscription state management and invoices.</p>
+        </article>
       </div>
+
+      <article class="card" style="margin-top:14px;">
+        <h4>Production Checklist (Next)</h4>
+        <ul class="compliance-list">
+          <li>Replace local auth with backend auth (JWT/session).</li>
+          <li>Move module execution to server with API keys in env only.</li>
+          <li>Replace QR manual flow with Stripe or Razorpay checkout + webhook.</li>
+          <li>Add legal pages: Terms, Privacy, Risk Disclosure, Refund Policy.</li>
+        </ul>
+      </article>
     </section>
   </main>
 
@@ -419,139 +612,246 @@
     </div>
   </footer>
 
-  <div class="modal" id="loginModal" aria-hidden="true">
+  <div class="modal" id="authModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="authTitle">
     <div class="modal-card">
-      <h4>Login / Signup (MVP)</h4>
-      <p style="color:var(--muted); margin-top:0;">This submission version stores session locally. Replace with backend auth in production.</p>
-      <input id="userEmail" type="email" placeholder="Email" style="margin-bottom:10px;" />
-      <input id="userPass" type="password" placeholder="Password" />
-      <div style="display:flex; gap:10px; margin-top:12px;">
-        <button class="btn btn-primary" id="loginSubmitBtn">Continue</button>
-        <button class="btn btn-outline" id="closeModalBtn">Close</button>
+      <h4 id="authTitle">Start Free Trial (MVP Auth)</h4>
+      <p class="lead" style="margin-bottom:10px;">For submission demo this is local-session auth. Replace with backend auth in production.</p>
+      <label for="emailInput">Email</label>
+      <input id="emailInput" type="email" autocomplete="email" placeholder="you@example.com" />
+      <label for="passwordInput" style="margin-top:8px;">Password</label>
+      <input id="passwordInput" type="password" autocomplete="current-password" placeholder="••••••••" />
+      <div style="display:flex; gap:8px; margin-top:12px; flex-wrap:wrap;">
+        <button class="btn btn-primary" id="authSubmitBtn">Continue</button>
+        <button class="btn btn-outline" id="authCloseBtn">Close</button>
       </div>
+      <span class="sr-only" id="authStatus" aria-live="polite"></span>
     </div>
   </div>
 
   <script>
-    const state = {
+    const defaultState = {
       creditsUsed: 0,
       history: [],
+      currency: 'USD',
       pendingTxn: null,
-      admin: false,
-      currency: 'USD'
+      paymentStatus: 'pending',
+      adminEnabled: false,
+      adminCode: 'stadvix-admin'
     };
 
-    const outputBox = document.getElementById('outputBox');
-    const usageText = document.getElementById('usageText');
-    const usageFill = document.getElementById('usageFill');
-    const historyList = document.getElementById('historyList');
-    const paymentStatus = document.getElementById('paymentStatus');
+    const state = { ...defaultState };
 
-    function updateUsage() {
-      const pct = Math.min((state.creditsUsed / 100) * 100, 100);
-      usageText.textContent = `Usage: ${state.creditsUsed} / 100 credits`;
-      usageFill.style.width = `${pct}%`;
+    function saveState() {
+      localStorage.setItem('stadvix_state_v2', JSON.stringify(state));
     }
 
-    function appendHistory(module, prompt, result) {
-      state.history.unshift({ module, prompt, result, at: new Date().toLocaleString() });
-      historyList.innerHTML = state.history.map(item => `
-        <div style="border:1px solid #2f3c62; border-radius:10px; padding:10px; margin-bottom:10px;">
-          <div><strong>${item.module}</strong> • <small style="color:#9cb0da">${item.at}</small></div>
-          <div style="color:#9cb0da; margin-top:5px;">Input: ${item.prompt.slice(0, 120)}</div>
-          <div style="margin-top:6px;">${item.result.slice(0, 180)}...</div>
-        </div>
-      `).join('');
+    function loadState() {
+      const raw = localStorage.getItem('stadvix_state_v2');
+      if (!raw) return;
+      try {
+        const parsed = JSON.parse(raw);
+        Object.assign(state, defaultState, parsed);
+      } catch (_) {
+        localStorage.removeItem('stadvix_state_v2');
+      }
     }
-
-    document.getElementById('runModuleBtn').addEventListener('click', () => {
-      const module = document.getElementById('moduleSelect').value;
-      const prompt = document.getElementById('promptInput').value.trim();
-      if (!prompt) {
-        outputBox.textContent = 'Please add input before running module.';
-        return;
-      }
-
-      outputBox.textContent = 'Processing...';
-      setTimeout(() => {
-        const result = `${module} Result:\n\n- Summary: High-potential lead workflow generated.\n- Suggested next step: personalize outreach with 2 follow-ups.\n- Compliance note: Validate claims before sending.\n\nDraft Output:\n${prompt.slice(0, 140)} ...`;
-        outputBox.textContent = result;
-        state.creditsUsed = Math.min(state.creditsUsed + 12, 100);
-        updateUsage();
-        appendHistory(module, prompt, result);
-      }, 650);
-    });
-
-    document.querySelectorAll('.tab').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById(btn.dataset.tab).classList.add('active');
-      });
-    });
-
-    document.getElementById('submitTxnBtn').addEventListener('click', () => {
-      const txn = document.getElementById('txnIdInput').value.trim();
-      if (!txn) {
-        paymentStatus.textContent = 'Status: Add transaction ID first';
-        return;
-      }
-      state.pendingTxn = txn;
-      paymentStatus.textContent = `Status: Submitted (${txn})`; 
-      paymentStatus.style.color = '#ffd98a';
-      document.getElementById('adminState').textContent = `Pending transaction waiting approval: ${txn}`;
-    });
-
-    document.getElementById('adminLoginBtn').addEventListener('click', () => {
-      const code = document.getElementById('adminCodeInput').value.trim();
-      if (code === 'stadvix-admin') {
-        state.admin = true;
-        document.getElementById('adminState').textContent = 'Admin mode active. You can approve latest payment.';
-        document.getElementById('approvePaymentBtn').style.display = 'inline-block';
-      } else {
-        document.getElementById('adminState').textContent = 'Invalid admin code.';
-      }
-    });
-
-    document.getElementById('approvePaymentBtn').addEventListener('click', () => {
-      if (!state.admin || !state.pendingTxn) {
-        paymentStatus.textContent = 'Status: No pending transaction';
-        return;
-      }
-      paymentStatus.textContent = 'Status: Active (manually approved)';
-      paymentStatus.style.color = '#9ff0bf';
-      state.pendingTxn = null;
-    });
 
     function setCurrency(cur) {
       state.currency = cur;
-      document.querySelectorAll('#pricing .price').forEach(node => {
+      document.querySelectorAll('.price').forEach(node => {
         node.textContent = cur === 'USD' ? node.dataset.usd : node.dataset.inr;
       });
       document.getElementById('usdBtn').classList.toggle('active', cur === 'USD');
       document.getElementById('inrBtn').classList.toggle('active', cur === 'INR');
+      saveState();
     }
-    document.getElementById('usdBtn').addEventListener('click', () => setCurrency('USD'));
-    document.getElementById('inrBtn').addEventListener('click', () => setCurrency('INR'));
 
-    const modal = document.getElementById('loginModal');
-    function openModal() { modal.classList.add('active'); modal.setAttribute('aria-hidden', 'false'); }
-    function closeModal() { modal.classList.remove('active'); modal.setAttribute('aria-hidden', 'true'); }
+    function updateUsage() {
+      const credits = Math.min(state.creditsUsed, 100);
+      const pct = Math.round((credits / 100) * 100);
+      document.getElementById('usageLabel').textContent = `Usage: ${credits} / 100 credits`;
+      document.getElementById('usagePct').textContent = `${pct}%`;
+      document.getElementById('usageFill').style.width = `${pct}%`;
+    }
 
-    ['loginBtn', 'trialBtn', 'heroTrialBtn'].forEach(id => document.getElementById(id).addEventListener('click', openModal));
-    document.getElementById('closeModalBtn').addEventListener('click', closeModal);
-    document.getElementById('loginSubmitBtn').addEventListener('click', () => {
-      const email = document.getElementById('userEmail').value.trim();
-      if (!email) return;
-      localStorage.setItem('stadvix_user', email);
-      closeModal();
-      alert(`Welcome, ${email}. Your trial session is active.`);
-    });
+    function renderHistory() {
+      const box = document.getElementById('historyList');
+      if (!state.history.length) {
+        box.textContent = 'No runs yet.';
+        return;
+      }
+      box.innerHTML = state.history.map(item => `
+        <article class="history-item">
+          <div><strong>${item.module}</strong> • <small>${item.time}</small></div>
+          <div style="margin-top:5px; color:#a8b6dd;">Input: ${item.prompt.slice(0, 130)}</div>
+          <div style="margin-top:6px;">${item.output.slice(0, 220)}...</div>
+        </article>
+      `).join('');
+    }
 
-    document.getElementById('year').textContent = new Date().getFullYear();
-    updateUsage();
-    setCurrency('USD');
+    function setPaymentStatusVisual() {
+      const el = document.getElementById('paymentStatus');
+      el.className = 'status-pill';
+      if (state.paymentStatus === 'approved') {
+        el.textContent = 'Status: Active (Approved)';
+        el.classList.add('ok');
+      } else if (state.paymentStatus === 'submitted') {
+        el.textContent = `Status: Submitted (${state.pendingTxn || 'Pending ID'})`;
+      } else {
+        el.textContent = 'Status: Pending Verification';
+      }
+    }
+
+    function setAdminVisual() {
+      document.getElementById('adminState').textContent = state.adminEnabled
+        ? 'Admin mode active. You can approve latest payment.'
+        : 'Admin mode is locked.';
+      document.getElementById('approveBtn').style.display = state.adminEnabled ? 'inline-block' : 'none';
+    }
+
+    function setTab(tabId) {
+      document.querySelectorAll('.tab').forEach(btn => {
+        const active = btn.dataset.tab === tabId;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.toggle('active', pane.id === tabId));
+    }
+
+    function runModule() {
+      const module = document.getElementById('moduleSelect').value;
+      const prompt = document.getElementById('promptInput').value.trim();
+      const output = document.getElementById('outputBox');
+
+      if (!prompt) {
+        output.textContent = 'Please add input before running a module.';
+        return;
+      }
+
+      output.textContent = 'Processing...';
+      setTimeout(() => {
+        const generated = `${module} Result\n\n1) Quick Strategy:\n- Target highest-fit audience segment.\n- Personalize outreach with value-first opener.\n- Schedule follow-up cadence (D2, D5, D9).\n\n2) Compliance Note:\n- Validate claims and contact policies before sending.\n\n3) Draft Output:\n${prompt.slice(0, 160)} ...`;
+
+        output.textContent = generated;
+        state.creditsUsed = Math.min(100, state.creditsUsed + 10);
+        state.history.unshift({ module, prompt, output: generated, time: new Date().toLocaleString() });
+        if (state.history.length > 20) state.history.length = 20;
+
+        const currentRuns = Number(document.getElementById('statRuns').textContent || 0);
+        const currentLeads = Number(document.getElementById('statLeads').textContent || 0);
+        document.getElementById('statRuns').textContent = String(currentRuns + 1);
+        document.getElementById('statLeads').textContent = String(currentLeads + 1);
+
+        updateUsage();
+        renderHistory();
+        saveState();
+      }, 650);
+    }
+
+    function bindEvents() {
+      document.getElementById('usdBtn').addEventListener('click', () => setCurrency('USD'));
+      document.getElementById('inrBtn').addEventListener('click', () => setCurrency('INR'));
+
+      document.querySelectorAll('.tab').forEach(btn => btn.addEventListener('click', () => setTab(btn.dataset.tab)));
+
+      document.getElementById('runBtn').addEventListener('click', runModule);
+      document.getElementById('clearBtn').addEventListener('click', () => {
+        document.getElementById('promptInput').value = '';
+        document.getElementById('outputBox').textContent = 'Your generated output will appear here...';
+      });
+
+      document.querySelectorAll('.template-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.getElementById('promptInput').value = btn.dataset.template;
+          setTab('workspacePane');
+        });
+      });
+
+      document.getElementById('submitTxnBtn').addEventListener('click', () => {
+        const txn = document.getElementById('txnInput').value.trim();
+        if (!txn) {
+          state.paymentStatus = 'pending';
+        } else {
+          state.pendingTxn = txn;
+          state.paymentStatus = 'submitted';
+        }
+        setPaymentStatusVisual();
+        saveState();
+      });
+
+      document.getElementById('resetBillingBtn').addEventListener('click', () => {
+        state.pendingTxn = null;
+        state.paymentStatus = 'pending';
+        document.getElementById('txnInput').value = '';
+        setPaymentStatusVisual();
+        saveState();
+      });
+
+      document.getElementById('adminEnableBtn').addEventListener('click', () => {
+        const inputCode = document.getElementById('adminCodeInput').value.trim();
+        state.adminEnabled = inputCode === state.adminCode;
+        setAdminVisual();
+        saveState();
+      });
+
+      document.getElementById('adminDisableBtn').addEventListener('click', () => {
+        state.adminEnabled = false;
+        setAdminVisual();
+        saveState();
+      });
+
+      document.getElementById('approveBtn').addEventListener('click', () => {
+        if (!state.adminEnabled || !state.pendingTxn) {
+          state.paymentStatus = 'pending';
+        } else {
+          state.paymentStatus = 'approved';
+          state.pendingTxn = null;
+        }
+        setPaymentStatusVisual();
+        saveState();
+      });
+
+      const modal = document.getElementById('authModal');
+      const openAuth = () => {
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.getElementById('emailInput').focus();
+      };
+      const closeAuth = () => {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+      };
+
+      ['loginBtn', 'trialBtn', 'heroTrialBtn'].forEach(id => document.getElementById(id).addEventListener('click', openAuth));
+      document.getElementById('demoBtn').addEventListener('click', () => setTab('workspacePane'));
+      document.getElementById('authCloseBtn').addEventListener('click', closeAuth);
+
+      modal.addEventListener('click', e => { if (e.target === modal) closeAuth(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAuth(); });
+
+      document.getElementById('authSubmitBtn').addEventListener('click', () => {
+        const email = document.getElementById('emailInput').value.trim();
+        const password = document.getElementById('passwordInput').value.trim();
+        if (!email || !password) return;
+        localStorage.setItem('stadvix_user_email', email);
+        document.getElementById('authStatus').textContent = `Session started for ${email}`;
+        closeAuth();
+        alert(`Welcome, ${email}. Trial started.`);
+      });
+    }
+
+    function init() {
+      loadState();
+      bindEvents();
+      setCurrency(state.currency || 'USD');
+      updateUsage();
+      renderHistory();
+      setPaymentStatusVisual();
+      setAdminVisual();
+      document.getElementById('year').textContent = new Date().getFullYear();
+    }
+
+    init();
   </script>
 </body>
 </html>
